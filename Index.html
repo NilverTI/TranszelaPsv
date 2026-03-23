@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSZELA - Viaja seguro y cómodo</title>
+    <!-- SEO best practices -->
+    <meta name="description"
+        content="Transit and travel across Peru with maximum comfort. Empresa de transporte Transzela.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <!-- Mounted Header & Pill -->
+    <div id="app-header"></div>
+
+    <!-- Hero Banner Carousel -->
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero__track">
+                <!-- Slide 1 -->
+                <div class="hero__slide hero__slide--active"
+                    style="background-image: linear-gradient(135deg, rgba(13,13,13,0.8), rgba(215,38,46,0.4)), url('assets/images/buswifi.jpg')">
+                    <div class="l-container hero__content">
+                        <div class="hero__badge">
+                            <h1 class="hero__badge-title">WIFI A BORDO</h1>
+                            <p class="hero__badge-sub">CONEXIÓN QUE NO SE DETIENE</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="hero__slide"
+                    style="background-image: linear-gradient(135deg, rgba(13,13,13,0.7), rgba(13,13,13,0.7)), url('assets/images/bhotel.jpg')">
+                    <div class="l-container hero__content hero__content--left">
+                        <div class="hero__badge">
+                            <h1 class="hero__badge-title">Bus Hotel</h1>
+                            <p class="hero__badge-sub">La Ruta del Descanso</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="hero__slide"
+                    style="background-image: linear-gradient(135deg, rgba(13,13,13,0.8), rgba(13,13,13,0.5)), url('assets/images/b180.jpg')">
+                    <div class="l-container hero__content hero__content--center">
+                        <div class="hero__badge">
+                            <h1 class="hero__badge-title">180° RECLINABLE</h1>
+                            <p class="hero__badge-sub">COMODIDAD PREMIUM TOTAL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 30px; z-index: 5;">
+                <button class="btn btn--primary btn--pill" id="prevBtn"
+                    style="width: 50px; height: 50px; padding: 0;"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn btn--primary btn--pill" id="nextBtn"
+                    style="width: 50px; height: 50px; padding: 0;"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+        </section>
+
+        <!-- Pasarela de Pagos Superpuesta -->
+        <div
+            style="position: relative; margin-top: -35px; z-index: 10; display: flex; justify-content: center; width: 100%; padding: 0 20px;">
+            <div
+                style="background: var(--color-surface); padding: 12px 30px; border-radius: var(--radius-pill); display: flex; align-items: center; justify-content: space-between; gap: 30px; border: 1px solid rgba(215, 38, 46, 0.15); box-shadow: 0 10px 30px rgba(215, 38, 46, 0.3); width: max-content; max-width: 100%; flex-wrap: wrap;">
+                <div style="text-align: left; line-height: 1.25; font-size: 14px; min-width: max-content;">
+                    <span style="font-weight: var(--font-weight-black); color: var(--color-text-main);">Contamos
+                        con</span><br>
+                    <span style="font-weight: var(--font-weight-black); color: var(--color-primary);">diferentes
+                        opciones</span><br>
+                    <span style="font-weight: var(--font-weight-black); color: var(--color-text-main);">de pago</span>
+                </div>
+                <img src="assets/images/pasarela.png" alt="Opciones de Pago"
+                    style="height: 38px; width: auto; object-fit: contain;">
+            </div>
+        </div>
+
+        <!-- Top Destinations -->
+        <section class="l-section">
+            <h2 class="l-section__title">¡Te llevamos a diferentes destinos!</h2>
+            <div class="l-container l-grid l-grid--3">
+                <div class="card">
+                    <img src="assets/images/Huancayo.jpg" alt="Huancayo" class="card__img">
+                    <div class="card__body">
+                        <div>
+                            <p class="dest-card__title">Viaja a <span>Huancayo</span></p>
+                            <p class="dest-card__sub">Saliendo de <strong>Lima</strong></p>
+                        </div>
+                        <a href="#" class="btn btn--primary u-w-full">VER HORARIO</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/images/Jauja.jpg" alt="Jauja" class="card__img">
+                    <div class="card__body">
+                        <div>
+                            <p class="dest-card__title">Viaja a <span>Jauja</span></p>
+                            <p class="dest-card__sub">Saliendo de <strong>Lima</strong></p>
+                        </div>
+                        <a href="#" class="btn btn--primary u-w-full">VER HORARIO</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/images/Huaraz.jpg" alt="Huaraz" class="card__img">
+                    <div class="card__body">
+                        <div>
+                            <p class="dest-card__title">Viaja a <span>Huaraz</span></p>
+                            <p class="dest-card__sub">Saliendo de <strong>Lima</strong></p>
+                        </div>
+                        <a href="#" class="btn btn--primary u-w-full">VER HORARIO</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l-container u-text-center u-mt-40">
+                <a href="pages/destinos.html" class="btn btn--primary btn--pill">Ver todos los destinos</a>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="l-section l-section--primary">
+            <h2 class="l-section__title u-text-white">¿Por qué escogernos?</h2>
+            <div class="l-container l-grid" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+                <div class="feature">
+                    <div class="feature__icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h4 class="feature__title">Empresa</h4>
+                    <p class="feature__desc">100% Peruana</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <h4 class="feature__title">2 Años</h4>
+                    <p class="feature__desc">de experiencia</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon"><i class="fa-solid fa-route"></i></div>
+                    <h4 class="feature__title">22 Destinos</h4>
+                    <p class="feature__desc">nacionales</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon"><i class="fa-solid fa-users"></i></div>
+                    <h4 class="feature__title">+2 Millones</h4>
+                    <p class="feature__desc">de clientes</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="feature__title">Transporte</h4>
+                    <p class="feature__desc">seguro</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner -->
+        <div class="l-container">
+            <div class="banner">
+                <div class="banner__brand">
+                    <span style="font-weight: 900; letter-spacing: -1px;">
+                        <span style="color: var(--color-dark-text);">TRANS</span><span
+                            style="color: var(--color-primary);">ZELA</span>
+                    </span>
+                    <span class="banner__sub">CDS | empresas</span>
+                </div>
+                <div class="banner__brand">
+                    <span style="font-weight: 900; letter-spacing: -1px;">
+                        <span style="color: var(--color-dark-text);">TRANS</span><span
+                            style="color: var(--color-primary);">ZELA</span>
+                    </span>
+                    <span class="banner__sub">CDS | envíos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Servicios -->
+        <section class="l-section">
+            <h2 class="l-section__title">Conoce nuestros servicios</h2>
+            <div class="l-container l-grid l-grid--2">
+                <div class="card card--horizontal">
+                    <img src="assets/images/Huaraz.jpg" alt="Flota" class="card__img">
+                    <div class="card__body">
+                        <h3 class="card__title">Nuestra flota</h3>
+                        <p class="card__desc">Contamos con la flota de bus más moderna en Perú para garantizar un viaje
+                            cómodo y tranquilo.</p>
+                        <a href="pages/flota.html" class="card__link">Más información →</a>
+                    </div>
+                </div>
+                <div class="card card--horizontal">
+                    <img src="assets/images/Jauja.jpg" alt="Corporativo" class="card__img">
+                    <div class="card__body">
+                        <h3 class="card__title">Viaje corporativo</h3>
+                        <p class="card__desc">Cotiza nuestro servicio corporativo y garantiza un viaje seguro a tu
+                            empresa.</p>
+                        <a href="pages/corporativo.html" class="card__link">Más información →</a>
+                    </div>
+                </div>
+                <div class="card card--horizontal">
+                    <img src="assets/images/destinos.webp" alt="Destinos" class="card__img">
+                    <div class="card__body">
+                        <h3 class="card__title">Destinos</h3>
+                        <p class="card__desc">Contamos con la flota de bus más moderna en Perú para garantizar un viaje
+                            cómodo y tranquilo.</p>
+                        <a href="pages/destinos.html" class="card__link">Más información →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="app-footer"></div>
+
+    <!-- Main JavaScript App -->
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>

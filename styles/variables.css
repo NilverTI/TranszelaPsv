@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Variables & Theme
+   ========================================================================== */
+
+:root {
+    /* Colors - Brand */
+    --color-primary: #D7262E;
+    --color-primary-hover: #b91d24;
+    
+    /* Colors - Surface */
+    --color-bg: #F4F7F6;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #EAEAEA;
+    
+    /* Colors - Text */
+    --color-text-main: #111111;
+    --color-text-muted: #555555;
+    
+    /* Colors - Dark Mode Elements */
+    --color-dark-bg: #0D0D0D;
+    --color-dark-text: #FFFFFF;
+    
+    /* Colors - Borders */
+    --color-border: #E0E0E0;
+    --color-border-dark: #222222;
+    
+    /* Spacing & Layout */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-pill: 50px;
+    
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+    
+    /* Effects & Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-primary: 0 10px 25px rgba(215, 38, 46, 0.25);
+    
+    /* Typography */
+    --font-family-base: 'Inter', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-muted);
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-main);
+    font-weight: var(--font-weight-black);
+    letter-spacing: -0.5px;
+}
+
+a {
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    background: transparent;
+    transition: all var(--transition-normal);
+}
