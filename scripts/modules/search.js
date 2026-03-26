@@ -19,7 +19,7 @@ export const initSearch = () => {
 
         // Extract and sort unique locations (adding Lima explicitly if missing)
         const destNames = destinations.map(d => d.title);
-        const allLocations = [...new Set(['Lima', 'Arequipa', 'Cusco', 'Puno', 'Juliaca', ...destNames])].sort();
+        const allLocations = [...new Set(destNames)].sort();
 
         const renderDropdown = (input, dropdown) => {
             const val = input.value.toLowerCase().trim();
