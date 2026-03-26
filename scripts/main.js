@@ -5,6 +5,7 @@ import { initLightbox } from './modules/lightbox.js';
 import { initClaims } from './modules/claims.js';
 import { renderDestinations } from './data/destinations.js';
 import { renderFleet } from './data/fleet.js';
+import { initSearch } from './modules/search.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Determine if we are in a subfolder "pages/"
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mount layout components
     renderHeader(isNested);
     renderFooter(isNested);
+    initSearch();
 
     // Initialize interactive modules
     const heroSection = document.getElementById('hero');
