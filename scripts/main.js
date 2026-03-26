@@ -3,6 +3,8 @@ import { renderFooter } from '../components/footer.js';
 import { initCarousel } from './modules/animations.js';
 import { initLightbox } from './modules/lightbox.js';
 import { initClaims } from './modules/claims.js';
+import { renderDestinations } from './data/destinations.js';
+import { renderFleet } from './data/fleet.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Determine if we are in a subfolder "pages/"
@@ -17,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroSection) {
         initCarousel();
     }
+
+    // Render dynamic data
+    renderDestinations();
+    renderFleet();
 
     const lightbox = document.getElementById('fleet-lightbox');
     if (lightbox) {

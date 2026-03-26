@@ -44,7 +44,17 @@ export const initClaims = () => {
         const reason = reasonSelect.options[reasonSelect.selectedIndex].text;
         const extraLabel = dynamicLabel.textContent;
         const extraValue = dynamicInput.value || 'N/A';
-        const detail = document.getElementById('claim-detail').value;
+        const detail = document.getElementById('claim-detail').value.trim();
+
+        if (!reasonSelect.value) {
+            alert('Por favor, seleccione una razón para el reporte.');
+            return;
+        }
+
+        if (detail.length < 10) {
+            alert('Por favor, proporcione un detalle más específico (mínimo 10 caracteres).');
+            return;
+        }
 
         // Construct professional message
         const messageText = `*LIBRO DE RECLAMACIONES - TRANSZELA*\n` +

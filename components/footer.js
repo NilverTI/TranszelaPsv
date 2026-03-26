@@ -1,7 +1,7 @@
 export function renderFooter(isNested = false) {
     const pagesPath = isNested ? './' : 'pages/';
     const footerRoot = document.getElementById('app-footer');
-    
+
     if (!footerRoot) return;
 
     footerRoot.innerHTML = `
