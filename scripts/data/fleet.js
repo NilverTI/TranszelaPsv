@@ -1,18 +1,18 @@
 export const fleet = [
-    { title: 'Busscar DD 8x2 Mercedes Vissta Buss DD - O500RSDD', img: '../assets/images/fleet/bus.png' },
-    { title: 'Panoramico DD 6x2 Scania Nuevo', img: '../assets/images/fleet/bus.png' },
-    { title: 'Comil Invictus DD Volvo Comil Invictus', img: '../assets/images/fleet/bus.png' },
-    { title: 'Comil Invictus HD 6x2 Scania Nuevo', img: '../assets/images/fleet/bus.png' },
-    { title: 'Comil Invictus DD 2023 6x2 15M Mercedes Campione', img: '../assets/images/fleet/bus.png' },
-    { title: 'Comil Invictus DD 2023 8x2 15M Mercedes Campione', img: '../assets/images/fleet/bus.png' },
-    { title: 'Irizar i6S 6x2 Scania Cabina Br 6', img: '../assets/images/fleet/bus.png' },
-    { title: 'Marcopolo Paradiso G8 1600 LD Parabrisa dividido', img: '../assets/images/fleet/bus.png' },
-    { title: 'G8 1800 DD 6x2 Scania Paradiso G8 1800 - Scania', img: '../assets/images/fleet/bus.png' },
-    { title: 'G7 1200 6x2 Mercedes Paradiso G7 1200', img: '../assets/images/fleet/bus.png' },
-    { title: 'G7 1800 DD 8x2 Scania G7 1800 DD', img: '../assets/images/fleet/bus.png' },
-    { title: 'G7 1800 DD 6x2 15M Scania Paradiso 15M', img: '../assets/images/fleet/bus.png' },
-    { title: 'New G7 1800 DD Mercedes Paradiso', img: '../assets/images/fleet/bus.png' },
-    { title: 'G6 1800 DD 6x2 Scania PERU SERVER', img: '../assets/images/fleet/bus.png' }
+    { title: 'Busscar DD 8x2 Mercedes Vissta Buss DD - O500RSDD', img: 'assets/images/fleet/Bus.png' },
+    { title: 'Panoramico DD 6x2 Scania Nuevo', img: 'assets/images/fleet/Bus.png' },
+    { title: 'Comil Invictus DD Volvo Comil Invictus', img: 'assets/images/fleet/Bus.png' },
+    { title: 'Comil Invictus HD 6x2 Scania Nuevo', img: 'assets/images/fleet/Bus.png' },
+    { title: 'Comil Invictus DD 2023 6x2 15M Mercedes Campione', img: 'assets/images/fleet/Bus.png' },
+    { title: 'Comil Invictus DD 2023 8x2 15M Mercedes Campione', img: 'assets/images/fleet/Bus.png' },
+    { title: 'Irizar i6S 6x2 Scania Cabina Br 6', img: 'assets/images/fleet/Bus.png' },
+    { title: 'Marcopolo Paradiso G8 1600 LD Parabrisa dividido', img: 'assets/images/fleet/Bus.png' },
+    { title: 'G8 1800 DD 6x2 Scania Paradiso G8 1800 - Scania', img: 'assets/images/fleet/Bus.png' },
+    { title: 'G7 1200 6x2 Mercedes Paradiso G7 1200', img: 'assets/images/fleet/Bus.png' },
+    { title: 'G7 1800 DD 8x2 Scania G7 1800 DD', img: 'assets/images/fleet/Bus.png' },
+    { title: 'G7 1800 DD 6x2 15M Scania Paradiso 15M', img: 'assets/images/fleet/Bus.png' },
+    { title: 'New G7 1800 DD Mercedes Paradiso', img: 'assets/images/fleet/Bus.png' },
+    { title: 'G6 1800 DD 6x2 Scania PERU SERVER', img: 'assets/images/fleet/Bus.png' }
 ];
 
 export function renderFleet() {
