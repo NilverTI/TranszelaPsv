@@ -6,6 +6,7 @@ import { initClaims } from './modules/claims.js';
 import { renderDestinations } from './data/destinations.js';
 import { renderFleet } from './data/fleet.js';
 import { initSearch } from './modules/search.js';
+import { initChatbot } from './modules/chatbot.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Determine if we are in a subfolder "pages/"
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderHeader(isNested);
     renderFooter(isNested);
     initSearch();
+    initChatbot();
 
     // Initialize interactive modules
     const heroSection = document.getElementById('hero');

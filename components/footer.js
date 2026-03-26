@@ -72,11 +72,37 @@ export function renderFooter(isNested = false) {
             </div>
         </footer>
 
-        <!-- Floating Chatbot -->
-        <div class="chatbot">
-            <div class="chatbot__bubble">Hola, soy tu MAPACHO<small>Estoy aquí para ayudarte</small></div>
-            <div class="chatbot__icon">
-                <img src="https://img.freepik.com/premium-vector/cute-robot-waving-hand-cartoon-illustration_138676-2744.jpg" alt="Robot" class="chatbot__img">
+        <!-- Floating Chatbot Widget -->
+        <div class="chatbot-container" id="chatbot-container">
+            <!-- Botón Flotante -->
+            <div class="chatbot" id="chatbot-btn">
+                <div class="chatbot__bubble">Hola, soy tu MAPACHO<small>Estoy aquí para ayudarte</small></div>
+                <div class="chatbot__icon">
+                    <img src="https://img.freepik.com/premium-vector/cute-robot-waving-hand-cartoon-illustration_138676-2744.jpg" alt="Robot" class="chatbot__img">
+                </div>
+            </div>
+
+            <!-- Formulario Desplegable -->
+            <div class="chatbot-widget" id="chatbot-widget" style="display: none;">
+                <div class="chatbot-widget__header">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <img src="https://img.freepik.com/premium-vector/cute-robot-waving-hand-cartoon-illustration_138676-2744.jpg" alt="Robot Mapacho" style="width:35px; border-radius:50%; border:2px solid var(--color-primary);">
+                        <div>
+                            <strong style="font-size: 14px; font-weight: 800;">MAPACHO Asistente</strong>
+                            <small style="display:block; font-size:11px; color:#aaa;">En línea 🟢</small>
+                        </div>
+                    </div>
+                    <button class="chatbot-widget__close" id="chatbot-close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="chatbot-widget__body">
+                    <p class="chatbot-widget__msg">
+                        ¡Hola! 👋 Soy Mapacho. ¿En qué te puedo ayudar el día de hoy?
+                    </p>
+                    <textarea id="chatbot-input" class="chatbot-widget__input" placeholder="Escribe tu consulta o duda aquí..."></textarea>
+                    <button id="chatbot-send" class="btn btn--primary u-w-full" style="padding: 12px; font-size: 13px; margin-top: 15px;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 16px;"></i> Enviar por WhatsApp
+                    </button>
+                </div>
             </div>
         </div>
     `;
