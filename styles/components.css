@@ -556,9 +556,9 @@
 .chatbot:hover { transform: scale(1.05); }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
-.chatbot__bubble { background: var(--color-dark-bg); color: var(--color-dark-text); padding: 15px 20px; border-radius: 16px 16px 0 16px; font-size: 14px; font-weight: var(--font-weight-bold); box-shadow: var(--shadow-md); position: relative; border: 2px solid var(--color-primary); }
+.chatbot__bubble { background: var(--color-dark-bg); color: var(--color-dark-text); padding: 10px 14px; border-radius: 14px 14px 0 14px; font-size: 12px; font-weight: var(--font-weight-bold); box-shadow: var(--shadow-md); position: relative; border: 2px solid var(--color-primary); }
 .chatbot__bubble::after { content: ''; position: absolute; bottom: -2px; right: -8px; border-left: 12px solid var(--color-dark-bg); border-bottom: 12px solid transparent; }
-.chatbot__bubble small { display: block; font-size: 12px; font-weight: var(--font-weight-medium); color: #aaa; margin-top: 4px; }
+.chatbot__bubble small { display: block; font-size: 10px; font-weight: var(--font-weight-medium); color: #aaa; margin-top: 2px; }
 .chatbot__icon { width: 70px; height: 70px; background: var(--color-surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); border: 3px solid var(--color-primary); overflow: hidden; padding: 2px; }
 .chatbot__img { border-radius: 50%; width: 100%; height: 100%; object-fit: cover; }
 
