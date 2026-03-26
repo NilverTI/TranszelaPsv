@@ -9,6 +9,10 @@
     padding: 0 var(--container-padding);
 }
 
+.l-container--narrow {
+    max-width: 800px;
+}
+
 /* Grid System */
 .l-grid {
     display: grid;
@@ -43,6 +47,10 @@
     position: relative;
     border-top: none;
     margin-bottom: 60px;
+}
+
+.l-section--bg-alt {
+    background-color: var(--color-bg);
 }
 
 /* Section Titles */
