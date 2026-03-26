@@ -1510,4 +1510,40 @@
         text-align: center;
         align-items: center;
     }
+
+    /* Reordenamiento del layout Principal Mobile: Buscador > Hero > Pasarela */
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .search-pill-overlay {
+        order: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 5px 15px 30px;
+        background-color: var(--color-dark-bg);
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-pill {
+        border-top-left-radius: 0; /* Integra la caja con la cabecera */
+        border-top-right-radius: 0;
+    }
+
+    .hero {
+        order: 2;
+        height: 350px;
+    }
+
+    .payment-overlay__wrapper {
+        order: 3;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    main > section:nth-of-type(2) { order: 4; }
+    main > section:nth-of-type(3) { order: 5; }
+    main > section:nth-of-type(4) { order: 6; }
 }
