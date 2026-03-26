@@ -1,5 +1,5 @@
 export const destinations = [
-    { title: 'Lima-La Victoria-Yerbateros', sub: 'Múltiples salidas diarias' },
+    { title: 'Lima', sub: 'Múltiples salidas diarias' },
     { title: 'Jauja', sub: 'Múltiples salidas diarias' },
     { title: 'Huaraz', sub: 'Múltiples salidas diarias' },
     { title: 'Cajacay', sub: 'Múltiples salidas diarias' },
@@ -31,7 +31,7 @@ export function renderDestinations() {
         // La foto coincidirá exactamente con el título. Ej: "Lima-La Victoria-Yerbateros.jpg"
         const imgSrc = `../assets/images/destinos/${dest.title}.jpg`;
         // Fallback 100% local genérico por si la imagen aún no se ha subido
-        const fallbackSrc = '../assets/images/buswifi.jpg';
+        const fallbackSrc = '../assets/images/defecto.png';
 
         return `
         <article class="card">

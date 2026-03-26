@@ -91,6 +91,13 @@ export const initSearch = () => {
         });
 
         if (dateInput) {
+            // Reacción visual inmediata al hacer clic en el input de fecha (incluso si no ha elegido día aún)
+            dateInput.addEventListener('click', () => {
+                const btnElegir = document.getElementById('btn-elegir');
+                updateDateActive(btnElegir);
+                selectedDateType = 'elegir';
+            });
+
             dateInput.addEventListener('change', (e) => {
                 if (e.target.value) {
                     const btnElegir = document.getElementById('btn-elegir');
