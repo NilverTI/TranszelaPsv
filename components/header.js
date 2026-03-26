@@ -52,10 +52,10 @@ export function renderHeader(isNested = false) {
                             <div class="search-pill__date-options">
                                 <button class="search-pill__date-btn js-date-btn" data-date="hoy">Hoy</button>
                                 <button class="search-pill__date-btn js-date-btn" data-date="manana">Mañana</button>
-                                <!-- Using type="date" invisible overlay or styled native picker -->
+                                <!-- Native date picker anchor -->
                                 <div style="position: relative; display: inline-block;">
                                     <button class="search-pill__date-btn search-pill__date-btn--active js-date-btn" id="btn-elegir" data-date="elegir"><i class="fa-regular fa-calendar"></i> <span id="lbl-elegir">Elegir</span></button>
-                                    <input type="date" id="search-date" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;">
+                                    <input type="date" id="search-date" style="position: absolute; top:100%; left:0; opacity:0; width:0; height:0; pointer-events:none;">
                                 </div>
                             </div>
                         </div>

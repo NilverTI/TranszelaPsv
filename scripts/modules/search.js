@@ -86,17 +86,26 @@ export const initSearch = () => {
                     selectedDateType = type;
                     lblElegir.textContent = 'Elegir';
                     dateInput.value = ''; // clear native date
+                } else if (type === 'elegir') {
+                    updateDateActive(btn);
+                    selectedDateType = 'elegir';
+                    if (dateInput && typeof dateInput.showPicker === 'function') {
+                        try { dateInput.showPicker(); } catch(err) {}
+                    } else if (dateInput) {
+                        dateInput.focus();
+                        dateInput.click();
+                    }
                 }
             });
         });
 
         if (dateInput) {
-            // Reacción visual inmediata al hacer clic en el input de fecha (incluso si no ha elegido día aún)
-            dateInput.addEventListener('click', () => {
-                const btnElegir = document.getElementById('btn-elegir');
-                updateDateActive(btnElegir);
-                selectedDateType = 'elegir';
-            });
+            // Configurar fecha mínima al Día de Hoy para bloquear el pasado
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            dateInput.min = `${yyyy}-${mm}-${dd}`;
 
             dateInput.addEventListener('change', (e) => {
                 if (e.target.value) {
