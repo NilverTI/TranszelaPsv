@@ -15,11 +15,15 @@ export function renderHeader(isNested = false) {
                             </span>
                         </a>
                     </div>
-                    <nav class="header__nav">
-                        <a href="#" class="header__nav-link">Contacto</a>
-                        <a href="#" class="header__nav-link"><img src="https://flagcdn.com/w20/pe.png" alt="Peru" style="height:14px; border-radius:2px;"> Perú</a>
-                        <a href="#" class="header__nav-link">Autogestión</a>
+                    <nav class="header__nav" id="header-nav">
+                        <a href="#" class="header__nav-link"><i class="fa-solid fa-headset"></i> Contacto</a>
+                        <a href="#" class="header__nav-link"><i class="fa-solid fa-earth-americas"></i> Perú</a>
+                        <a href="#" class="header__nav-link"><i class="fa-solid fa-user"></i> Autogestión</a>
                     </nav>
+                    <!-- Mobile Hamburger Button -->
+                    <button class="header__hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
             </header>
 

@@ -303,6 +303,20 @@
     color: var(--color-primary);
 }
 
+.header__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--color-dark-text);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.header__hamburger:hover {
+    color: var(--color-primary);
+}
+
 /* Search Pill (.search-pill) */
 .search-pill-overlay {
     margin-top: -35px;
@@ -1269,6 +1283,44 @@
     .page-header__desc {
         font-size: 15px;
         padding: 0 15px;
+    }
+
+    /* Menú Hamburguesa Transzela */
+    .header__hamburger {
+        display: block;
+    }
+
+    .header__nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-dark-bg);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        border-top: 2px solid var(--color-border-dark);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        z-index: 1000;
+        
+        /* Oculto por defecto en CSS con opacidad y barrido */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .header__nav--active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .header__nav-link {
+        padding: 15px 25px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        font-size: 15px;
     }
 
     /* Redimensionamiento Formulario Libro de Reclamaciones */

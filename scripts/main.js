@@ -18,6 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearch();
     initChatbot();
 
+    // Hamburger Menu Logic
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const headerNav = document.getElementById('header-nav');
+    if (hamburgerBtn && headerNav) {
+        hamburgerBtn.addEventListener('click', () => {
+            headerNav.classList.toggle('header__nav--active');
+            const icon = hamburgerBtn.querySelector('i');
+            if (headerNav.classList.contains('header__nav--active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
     // Initialize interactive modules
     const heroSection = document.getElementById('hero');
     if (heroSection) {
