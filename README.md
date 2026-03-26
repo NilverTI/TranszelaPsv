@@ -66,4 +66,3 @@ Puedes levantar el proyecto en un servidor local utilizando extensiones como **L
 
 Diseñado y desarrollado profesionalmente por:  
 **NILVER T.I.**  
-*Senior Software Engineer*
