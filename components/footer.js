@@ -14,15 +14,19 @@ export function renderFooter(isNested = false) {
                         </span>
                     </div>
                     <h4 class="footer__title">Ayuda o contacto</h4>
-                    <a href="#" class="footer__contact-btn"><i class="fa-brands fa-whatsapp footer__whatsapp-icon"></i> 999 999 996</a>
-                    <div class="footer__contact-btn footer__contact-btn--address">
-                        <i class="fa-solid fa-location-dot"></i> 
-                        <span class="footer__address-text">Av. Javier Prado 1109,<br>La Victoria - Lima, Perú</span>
+                    <div class="footer__contact-wrap">
+                        <a href="#" class="footer__contact-btn"><i class="fa-brands fa-whatsapp footer__whatsapp-icon"></i> 999 999 996</a>
+                        <div class="footer__contact-btn footer__contact-btn--address">
+                            <i class="fa-solid fa-location-dot" style="margin-top: 3px;"></i> 
+                            <span class="footer__address-text">Av. Javier Prado 1109,<br>Lima</span>
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <h4 class="footer__title">Rutas principales</h4>
-                    <ul class="footer__routes">
+                    <h4 class="footer__title js-footer-accordion" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        Rutas principales <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </h4>
+                    <ul class="footer__routes footer-accordion-content">
                         <li class="footer__routes-item"><a href="#">Lima-La V.-Yerbateros</a></li>
                         <li class="footer__routes-item"><a href="#">Jauja</a></li>
                         <li class="footer__routes-item"><a href="#">Huaraz</a></li>

@@ -35,6 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Footer Accordion Logic
+    const footerAccordion = document.querySelector('.js-footer-accordion');
+    const footerContent = document.querySelector('.footer-accordion-content');
+    if (footerAccordion && footerContent) {
+        footerAccordion.addEventListener('click', () => {
+            footerAccordion.classList.toggle('js-footer-accordion--open');
+            footerContent.classList.toggle('footer-accordion-content--open');
+        });
+    }
+
     // Initialize interactive modules
     const heroSection = document.getElementById('hero');
     if (heroSection) {
