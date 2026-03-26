@@ -9,9 +9,9 @@ export function renderHeader(isNested = false) {
             <header class="header">
                 <div class="l-container header__container">
                     <div class="header__logo">
-                        <a href="${rootPath}Index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 28px; font-weight: 900; letter-spacing: -1px;">
-                                <span style="color: var(--color-dark-text);">TRANS</span><span style="color: var(--color-primary);">ZELA</span>
+                        <a href="${rootPath}index.html" class="header__logo-link">
+                            <span class="header__logo-text">
+                                <span class="header__logo-text--dark">TRANS</span><span class="header__logo-text--primary">ZELA</span>
                             </span>
                         </a>
                     </div>
@@ -45,16 +45,16 @@ export function renderHeader(isNested = false) {
                             </div>
                         </div>
 
-                        <div class="search-pill__item search-pill__item--bordered search-pill__item--padded" style="padding-left: 30px;">
+                        <div class="search-pill__item search-pill__item--bordered search-pill__item--padded search-pill__item--date">
                             <label class="search-pill__label">¿Cuándo viajas?</label>
-                            <div style="display: flex; gap: 5px;">
-                                <button class="btn btn--link" style="padding: 6px 14px; border: 1px solid var(--color-border); border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--color-text-muted);">Hoy</button>
-                                <button class="btn btn--link" style="padding: 6px 14px; border: 1px solid var(--color-border); border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--color-text-muted);">Mañana</button>
-                                <button class="btn btn--link" style="color: var(--color-text-main); font-weight: 700;"><i class="fa-regular fa-calendar"></i> Elegir</button>
+                            <div class="search-pill__date-options">
+                                <button class="search-pill__date-btn">Hoy</button>
+                                <button class="search-pill__date-btn">Mañana</button>
+                                <button class="search-pill__date-btn search-pill__date-btn--active"><i class="fa-regular fa-calendar"></i> Elegir</button>
                             </div>
                         </div>
 
-                        <button class="btn btn--primary btn--pill" style="padding: 16px 40px; margin-left: 10px;">
+                        <button class="btn btn--primary btn--pill search-pill__submit">
                             <i class="fa-solid fa-magnifying-glass"></i> Buscar
                         </button>
                     </div>

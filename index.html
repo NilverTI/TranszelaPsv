@@ -54,30 +54,22 @@
                 </div>
             </div>
 
-            <div
-                style="position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 30px; z-index: 5;">
-                <button class="btn btn--primary btn--pill" id="prevBtn"
-                    style="width: 50px; height: 50px; padding: 0;"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="btn btn--primary btn--pill" id="nextBtn"
-                    style="width: 50px; height: 50px; padding: 0;"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="hero__nav-container">
+                <button class="btn btn--primary btn--pill hero__nav-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn btn--primary btn--pill hero__nav-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
 
         </section>
 
         <!-- Pasarela de Pagos Superpuesta -->
-        <div
-            style="position: relative; margin-top: -35px; z-index: 10; display: flex; justify-content: center; width: 100%; padding: 0 20px;">
-            <div
-                style="background: var(--color-surface); padding: 12px 30px; border-radius: var(--radius-pill); display: flex; align-items: center; justify-content: space-between; gap: 30px; border: 1px solid rgba(215, 38, 46, 0.15); box-shadow: 0 10px 30px rgba(215, 38, 46, 0.3); width: max-content; max-width: 100%; flex-wrap: wrap;">
-                <div style="text-align: left; line-height: 1.25; font-size: 14px; min-width: max-content;">
-                    <span style="font-weight: var(--font-weight-black); color: var(--color-text-main);">Contamos
-                        con</span><br>
-                    <span style="font-weight: var(--font-weight-black); color: var(--color-primary);">diferentes
-                        opciones</span><br>
-                    <span style="font-weight: var(--font-weight-black); color: var(--color-text-main);">de pago</span>
+        <div class="payment-overlay__wrapper">
+            <div class="payment-overlay">
+                <div class="payment-overlay__text">
+                    <span class="payment-overlay__text--bold">Contamos con</span><br>
+                    <span class="payment-overlay__text--primary">diferentes opciones</span><br>
+                    <span class="payment-overlay__text--bold">de pago</span>
                 </div>
-                <img src="assets/images/pasarela.png" alt="Opciones de Pago"
-                    style="height: 38px; width: auto; object-fit: contain;">
+                <img src="assets/images/pasarela.png" alt="Opciones de Pago" class="payment-overlay__img">
             </div>
         </div>
 
@@ -125,7 +117,7 @@
         <!-- Why Us -->
         <section class="l-section l-section--primary">
             <h2 class="l-section__title u-text-white">¿Por qué escogernos?</h2>
-            <div class="l-container l-grid" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+            <div class="l-container l-grid l-grid--features">
                 <div class="feature">
                     <div class="feature__icon"><i class="fa-solid fa-map-location-dot"></i></div>
                     <h4 class="feature__title">Empresa</h4>
@@ -158,16 +150,14 @@
         <div class="l-container">
             <div class="banner">
                 <div class="banner__brand">
-                    <span style="font-weight: 900; letter-spacing: -1px;">
-                        <span style="color: var(--color-dark-text);">TRANS</span><span
-                            style="color: var(--color-primary);">ZELA</span>
+                    <span class="header__logo-text">
+                        <span class="header__logo-text--dark">TRANS</span><span class="header__logo-text--primary">ZELA</span>
                     </span>
                     <span class="banner__sub">CDS | empresas</span>
                 </div>
                 <div class="banner__brand">
-                    <span style="font-weight: 900; letter-spacing: -1px;">
-                        <span style="color: var(--color-dark-text);">TRANS</span><span
-                            style="color: var(--color-primary);">ZELA</span>
+                    <span class="header__logo-text">
+                        <span class="header__logo-text--dark">TRANS</span><span class="header__logo-text--primary">ZELA</span>
                     </span>
                     <span class="banner__sub">CDS | envíos</span>
                 </div>

@@ -9,15 +9,15 @@ export function renderFooter(isNested = false) {
             <div class="l-container l-grid l-grid--4">
                 <div>
                     <div class="footer__logo">
-                        <span style="font-size: 28px; font-weight: 900; letter-spacing: -1px;">
-                            <span style="color: var(--color-dark-text);">TRANS</span><span style="color: var(--color-primary);">ZELA</span>
+                        <span class="header__logo-text">
+                            <span class="header__logo-text--dark">TRANS</span><span class="header__logo-text--primary">ZELA</span>
                         </span>
                     </div>
                     <h4 class="footer__title">Ayuda o contacto</h4>
-                    <a href="#" class="footer__contact-btn"><i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 20px;"></i> 999 999 996</a>
-                    <div class="footer__contact-btn" style="align-items: flex-start; cursor: default;">
+                    <a href="#" class="footer__contact-btn"><i class="fa-brands fa-whatsapp footer__whatsapp-icon"></i> 999 999 996</a>
+                    <div class="footer__contact-btn footer__contact-btn--address">
                         <i class="fa-solid fa-location-dot"></i> 
-                        <span style="line-height:1.4">Av. Javier Prado 1109,<br>La Victoria - Lima, Perú</span>
+                        <span class="footer__address-text">Av. Javier Prado 1109,<br>La Victoria - Lima, Perú</span>
                     </div>
                 </div>
                 <div>
@@ -60,11 +60,11 @@ export function renderFooter(isNested = false) {
                     <h4 class="footer__title">Legal</h4>
                     <ul>
                         <li class="footer__list"><a href="#" class="footer__list-link">Términos y Condiciones</a></li>
-                        <li class="footer__list"><a href="#" class="footer__list-link u-text-white" style="font-weight: 700; display:block; margin: 15px 0 20px;">Portal de proveedor</a></li>
+                        <li class="footer__list"><a href="#" class="footer__list-link u-text-white footer__list-link--highlight">Portal de proveedor</a></li>
                         <li class="footer__list">
-                            <a href="#" class="footer__claim">
+                            <a href="${pagesPath}reclamaciones.html" class="footer__claim">
                                 <img src="https://www.munisanjeronimocusco.gob.pe/wp-content/uploads/2023/07/libro-de-reclamaciones.jpg" alt="Libro" class="footer__claim-img">
-                                <span style="line-height: 1.2;">Libro de<br>reclamaciones</span>
+                                <span class="footer__claim-text">Libro de<br>reclamaciones</span>
                             </a>
                         </li>
                     </ul>

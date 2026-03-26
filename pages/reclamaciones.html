@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSZELA - Libro de Reclamaciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <!-- Mounted Header -->
+    <div id="app-header"></div>
+
+    <main>
+        <section class="l-section page-header page-header--reclamaciones">
+            <div class="l-container">
+                <h1 class="page-header__title">Libro de Reclamaciones</h1>
+                <p class="page-header__desc">Tu opinión nos ayuda a mejorar. Registra tu queja o reclamo de manera formal.</p>
+            </div>
+        </section>
+
+        <section class="l-section" style="background-color: var(--color-bg);">
+            <div class="l-container" style="max-width: 800px;">
+                <div class="claim-card">
+                    <div class="claim-card__header">
+                        <div class="claim-card__icon-wrap">
+                            <i class="fa-solid fa-book-open claim-card__icon"></i>
+                        </div>
+                        <h2 class="claim-card__title">Registro de Hoja de Reclamación</h2>
+                        <p class="claim-card__desc">Conforme a lo establecido en el Código de Protección y Defensa del Consumidor.</p>
+                    </div>
+
+                    <form id="claim-form" class="claim-form">
+                        <div class="claim-form__group">
+                            <label for="report-reason" class="claim-form__label">Razón del reporte</label>
+                            <select id="report-reason" class="claim-form__input" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="reclamo">Reclamo (Disconformidad relacionada a productos o servicios)</option>
+                                <option value="queja">Queja (Disconformidad no relacionada a los productos o servicios)</option>
+                                <option value="usuario">Reportar a un usuario/personal</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Field -->
+                        <div id="dynamic-field-container" class="claim-form__group" style="display: none;">
+                            <label id="dynamic-label" for="dynamic-input" class="claim-form__label">Dato adicional</label>
+                            <input type="text" id="dynamic-input" class="claim-form__input" placeholder="Ingresa la información">
+                        </div>
+
+                        <div class="claim-form__group">
+                            <label for="claim-detail" class="claim-form__label">Detalle de la situación</label>
+                            <textarea id="claim-detail" class="claim-form__input claim-form__textarea" placeholder="Describe lo ocurrido con el mayor detalle posible..." required></textarea>
+                        </div>
+
+                        <div class="claim-form__info">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <p><strong>Dato importante:</strong> Después de enviar este formulario, asegúrate de adjuntar las evidencias (videos o imágenes) para agilizar el proceso.</p>
+                        </div>
+
+                        <button type="submit" class="claim-form__submit btn btn--primary btn--large">Enviar Reporte</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="app-footer"></div>
+
+    <script type="module" src="../scripts/main.js"></script>
+</body>
+
+</html>

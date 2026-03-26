@@ -24,6 +24,10 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+.l-grid--features {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
 .l-grid--4 {
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;

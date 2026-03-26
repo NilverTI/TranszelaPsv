@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRANSZELA - Nuestra Flota</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 
@@ -16,215 +17,191 @@
 
     <!-- Page Specific Content -->
     <main>
-        <section class="l-section page-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop') center/cover; padding: 180px 0 80px; text-align: center;">
+        <section class="l-section page-header page-header--flota">
             <div class="l-container">
-                <h1 style="font-size: 3rem; color: #fff; margin-bottom: 20px;">Nuestra Flota</h1>
-                <p style="color: #fff; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Conoce los buses más modernos y cómodos del Perú para tu viaje.</p>
+                <h1 class="page-header__title">Nuestra Flota</h1>
+                <p class="page-header__desc">Conoce los buses más modernos y cómodos del Perú para tu viaje.</p>
             </div>
-        </section>
-
-        <section class="l-section">
-            <div class="l-container">
-                <div class="l-grid l-grid--2" style="align-items: center;">
-                    <div>
-                        <h2 class="l-section__title l-section__title--left">Tecnología y Confort</h2>
-                        <p style="margin-bottom: 15px; color: #555; line-height: 1.6; font-size: 1.1rem;">Nuestros buses cuentan con asientos reclinables hasta 160° y 180°, pantallas individuales con entretenimiento a bordo, conectividad USB y WiFi de alta velocidad.</p>
-                        <p style="color: #555; line-height: 1.6; font-size: 1.1rem;">Mantenemos un estricto control de mantenimiento preventivo para asegurar que cada viaje sea 100% seguro.</p>
-                        <ul style="margin-top: 30px; color: #555; list-style: none; padding-left: 0;">
-                            <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 15px; font-size: 1.2rem;"></i> Asientos de cuero ergonómicos</li>
-                            <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 15px; font-size: 1.2rem;"></i> Aire acondicionado y calefacción</li>
-                            <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 15px; font-size: 1.2rem;"></i> Servicios higiénicos con tratamiento químico</li>
-                            <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fa-solid fa-check" style="color: var(--color-primary); margin-right: 15px; font-size: 1.2rem;"></i> Monitoreo GPS 24/7</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop" alt="Interior Bus" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                    </div>
-                </div>
-            </div>
-        </section>
         </section>
 
         <!-- Inventario Flota Virtual -->
         <section class="l-section" style="background-color: var(--color-bg);">
             <div class="l-container">
-                <div style="text-align: center; margin-bottom: 50px;">
-                    <h2 class="l-section__title" style="margin-top: 0; margin-bottom: 15px;">Inventario de Flota</h2>
-                    <p style="color: var(--color-text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Conoce las especificaciones de nuestras unidades de última generación y gran confort.</p>
-                </div>
 
-                <div class="l-grid l-grid--4">
+                <div class="l-grid l-grid--3">
                     <!-- Bus 1 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Busscar DD 8x2 Mercedes Vissta Buss DD - O500RSDD</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/busscar_dd.png"
+                        data-title="Busscar DD 8x2 Mercedes Vissta Buss DD - O500RSDD">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/busscar_dd.png" alt="Busscar DD" class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 58.765</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Busscar DD 8x2 Mercedes Vissta Buss DD - O500RSDD</h3>
                         </div>
                     </div>
-                    
+
                     <!-- Bus 2 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Panoramico DD 6x2 Scania Nuevo</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/comil_invictus.png"
+                        data-title="Panoramico DD 6x2 Scania Nuevo">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/comil_invictus.png" alt="Panoramico DD"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 414.866</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Panoramico DD 6x2 Scania Nuevo</h3>
                         </div>
                     </div>
 
                     <!-- Bus 3 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Comil Invictus DD Volvo Comil Invictus</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/marcopolo_g8.png"
+                        data-title="Comil Invictus DD Volvo Comil Invictus">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/marcopolo_g8.png" alt="Comil Invictus DD"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 79.996</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Comil Invictus DD Volvo Comil Invictus</h3>
                         </div>
                     </div>
 
                     <!-- Bus 4 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Comil Invictus HD 6x2 Scania Nuevo</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/irizar_i6s.png"
+                        data-title="Comil Invictus HD 6x2 Scania Nuevo">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/irizar_i6s.png" alt="Comil Invictus HD"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 123.645</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Comil Invictus HD 6x2 Scania Nuevo</h3>
                         </div>
                     </div>
 
                     <!-- Bus 5 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Comil Invictus DD 2023 6x2 15M Mercedes Campione</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/busscar_dd.png"
+                        data-title="Comil Invictus DD 2023 6x2 15M Mercedes Campione">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/busscar_dd.png" alt="Comil Invictus DD"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 263.580</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Comil Invictus DD 2023 6x2 15M Mercedes Campione</h3>
                         </div>
                     </div>
 
                     <!-- Bus 6 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Comil Invictus DD 2023 8x2 15M Mercedes Campione</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/comil_invictus.png"
+                        data-title="Comil Invictus DD 2023 8x2 15M Mercedes Campione">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/comil_invictus.png" alt="Comil Invictus DD"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 270.940</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Comil Invictus DD 2023 8x2 15M Mercedes Campione</h3>
                         </div>
                     </div>
 
                     <!-- Bus 7 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Irizar i6S 6x2 Scania Cabina Br 6</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/marcopolo_g8.png"
+                        data-title="Irizar i6S 6x2 Scania Cabina Br 6">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/marcopolo_g8.png" alt="Irizar i6S" class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 36.138</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Irizar i6S 6x2 Scania Cabina Br 6</h3>
                         </div>
                     </div>
 
                     <!-- Bus 8 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">Marcopolo Paradiso G8 1600 LD Parabrisa dividido</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/irizar_i6s.png"
+                        data-title="Marcopolo Paradiso G8 1600 LD Parabrisa dividido">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/irizar_i6s.png" alt="Marcopolo Paradiso G8"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 32.076</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">Marcopolo Paradiso G8 1600 LD Parabrisa dividido</h3>
                         </div>
                     </div>
 
                     <!-- Bus 9 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">G8 1800 DD 6x2 Scania Paradiso G8 1800 - Scania</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/busscar_dd.png"
+                        data-title="G8 1800 DD 6x2 Scania Paradiso G8 1800 - Scania">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/busscar_dd.png" alt="G8 1800 DD" class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 38.090</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">G8 1800 DD 6x2 Scania Paradiso G8 1800 - Scania</h3>
                         </div>
                     </div>
 
                     <!-- Bus 10 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">G7 1200 6x2 Mercedes Paradiso G7 1200</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/comil_invictus.png"
+                        data-title="G7 1200 6x2 Mercedes Paradiso G7 1200">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/comil_invictus.png" alt="G7 1200" class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 47.508</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">G7 1200 6x2 Mercedes Paradiso G7 1200</h3>
                         </div>
                     </div>
 
                     <!-- Bus 11 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">G7 1800 DD 8x2 Scania G7 1800 DD</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/marcopolo_g8.png"
+                        data-title="G7 1800 DD 8x2 Scania G7 1800 DD">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/marcopolo_g8.png" alt="G7 1800 DD" class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 63.677</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">G7 1800 DD 8x2 Scania G7 1800 DD</h3>
                         </div>
                     </div>
 
                     <!-- Bus 12 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">G7 1800 DD 6x2 15M Scania Paradiso 15M</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/irizar_i6s.png"
+                        data-title="G7 1800 DD 6x2 15M Scania Paradiso 15M">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/irizar_i6s.png" alt="G7 1800 DD" class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 113.745</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">G7 1800 DD 6x2 15M Scania Paradiso 15M</h3>
                         </div>
                     </div>
 
                     <!-- Bus 13 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">New G7 1800 DD Mercedes Paradiso</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/busscar_dd.png"
+                        data-title="New G7 1800 DD Mercedes Paradiso">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/busscar_dd.png" alt="New G7 1800 DD"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 124.326</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">New G7 1800 DD Mercedes Paradiso</h3>
                         </div>
                     </div>
 
                     <!-- Bus 14 -->
-                    <div style="background: var(--color-surface); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-primary); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
-                        <div>
-                            <div style="font-size: 32px; color: var(--color-primary); margin-bottom: 20px;"><i class="fa-solid fa-bus"></i></div>
-                            <h3 style="font-size: 15px; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.4; font-weight: 800;">G6 1800 DD 6x2 Scania PERU SERVER</h3>
+                    <div class="fleet-card js-lightbox-trigger" data-img="../assets/images/fleet/comil_invictus.png"
+                        data-title="G6 1800 DD 6x2 Scania PERU SERVER">
+                        <div class="fleet-card__img-container">
+                            <img src="../assets/images/fleet/comil_invictus.png" alt="G6 1800 DD"
+                                class="fleet-card__img">
                         </div>
-                        <div style="background: var(--color-bg); padding: 12px; border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                            <span style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Valor Referencial</span><br>
-                            <span style="color: var(--color-text-main); font-weight: 900; font-size: 16px;">S/. 395.189</span>
+                        <div class="fleet-card__content">
+                            <h3 class="fleet-card__title">G6 1800 DD 6x2 Scania PERU SERVER</h3>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div id="fleet-lightbox" class="lightbox">
+            <button class="lightbox__close" aria-label="Cerrar">&times;</button>
+            <div class="lightbox__content">
+                <img src="" alt="Bus Ampliado" class="lightbox__img">
+                <div class="lightbox__caption"></div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer Component -->
@@ -232,4 +209,5 @@
 
     <script type="module" src="../scripts/main.js"></script>
 </body>
+
 </html>

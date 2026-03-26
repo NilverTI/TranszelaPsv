@@ -162,6 +162,55 @@
     font-weight: var(--font-weight-bold);
 }
 
+/* Payment Overlay (.payment-overlay) */
+.payment-overlay__wrapper {
+    position: relative;
+    margin-top: -35px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.payment-overlay {
+    background: var(--color-surface);
+    padding: 12px 30px;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border: 1px solid rgba(215, 38, 46, 0.15);
+    box-shadow: 0 10px 30px rgba(215, 38, 46, 0.3);
+    width: max-content;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.payment-overlay__text {
+    text-align: left;
+    line-height: 1.25;
+    font-size: 14px;
+    min-width: max-content;
+}
+
+.payment-overlay__text--bold {
+    font-weight: var(--font-weight-black);
+    color: var(--color-text-main);
+}
+
+.payment-overlay__text--primary {
+    font-weight: var(--font-weight-black);
+    color: var(--color-primary);
+}
+
+.payment-overlay__img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
 /* Header (.header) */
 .header-wrapper {
     position: sticky;
@@ -190,6 +239,22 @@
     font-weight: var(--font-weight-black);
     color: var(--color-dark-text);
 }
+
+.header__logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__logo-text {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.header__logo-text--dark { color: var(--color-dark-text); }
+.header__logo-text--primary { color: var(--color-primary); }
 
 .header__logo i { color: var(--color-primary); }
 .header__logo-img { height: 40px; filter: brightness(0) invert(1); }
@@ -277,6 +342,44 @@
     transform: rotate(180deg);
 }
 
+.search-pill__item--date {
+    padding-left: 30px;
+}
+
+.search-pill__date-options {
+    display: flex;
+    gap: 5px;
+}
+
+.search-pill__date-btn {
+    background: none;
+    box-shadow: none;
+    padding: 6px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.search-pill__date-btn:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.search-pill__date-btn--active {
+    border: 1px solid transparent;
+    color: var(--color-text-main);
+    font-weight: 700;
+}
+
+.search-pill__submit {
+    padding: 16px 40px;
+    margin-left: 10px;
+}
+
 @media (max-width: 992px) {
     .search-pill { flex-direction: column; gap: 20px; padding: 30px; border-radius: var(--radius-md); }
     .search-pill__item { width: 100%; border-left: none; padding: 15px 0; border-bottom: 1px solid var(--color-border); }
@@ -335,6 +438,23 @@
     letter-spacing: 2px;
 }
 
+.hero__nav-container {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 5;
+    transform: translateY(-50%);
+}
+
+.hero__nav-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+}
+
 /* Why Us (.feature) */
 .feature { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .feature__icon {
@@ -376,8 +496,14 @@
 .footer__contact-btn i { color: var(--color-primary); font-size: 18px; }
 .footer__contact-btn i.fa-whatsapp { color: #25D366; font-size: 22px; }
 
+.footer__whatsapp-icon { color: #25D366; font-size: 20px; }
+.footer__contact-btn--address { align-items: flex-start; cursor: default; }
+.footer__address-text { line-height: 1.4; }
+
 .footer__list { margin-bottom: 12px; font-size: 14px; color: #bbb; }
 .footer__list-link:hover { color: var(--color-primary); padding-left: 5px; }
+
+.footer__list-link--highlight { font-weight: 700; display: block; margin: 15px 0 20px; }
 
 .footer__routes { column-count: 2; column-gap: 30px; }
 .footer__routes-item { break-inside: avoid; margin-bottom: 12px; font-size: 14px; color: #bbb; }
@@ -388,6 +514,7 @@
 }
 .footer__claim:hover { background: rgba(255,255,255,0.1); }
 .footer__claim-img { width: 35px; border-radius: 4px; padding: 2px; }
+.footer__claim-text { line-height: 1.2; }
 
 /* Chatbot (.chatbot) */
 .chatbot { position: fixed; bottom: 40px; right: 40px; display: flex; align-items: flex-end; gap: 20px; z-index: 1000; animation: float 4s infinite ease-in-out; }
@@ -397,3 +524,330 @@
 .chatbot__bubble small { display: block; font-size: 12px; font-weight: var(--font-weight-medium); color: #aaa; margin-top: 4px; }
 .chatbot__icon { width: 70px; height: 70px; background: var(--color-surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); border: 3px solid var(--color-primary); overflow: hidden; padding: 2px; }
 .chatbot__img { border-radius: 50%; width: 100%; height: 100%; object-fit: cover; }
+
+/* Fleet Cards (.fleet-card) */
+.fleet-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.fleet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.fleet-card__img-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-surface-alt);
+}
+
+.fleet-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.fleet-card:hover .fleet-card__img {
+    transform: scale(1.05);
+}
+
+.fleet-card__content {
+    padding: 20px;
+    text-align: center;
+}
+
+.fleet-card__title {
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-main);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Lightbox (.lightbox) */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.lightbox--active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox__content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    transform: scale(0.9);
+    transition: transform var(--transition-normal);
+}
+
+.lightbox--active .lightbox__content {
+    transform: scale(1);
+}
+
+.lightbox__img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    display: block;
+}
+
+.lightbox__close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.lightbox__close:hover {
+    color: var(--color-primary);
+}
+
+.lightbox__caption {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+/* ==========================================================================
+   Claim Form (Libro de Reclamaciones)
+   ========================================================================== */
+
+.claim-card {
+    background: var(--color-surface);
+    padding: 60px;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-top: 8px solid var(--color-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.claim-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.05), transparent);
+    pointer-events: none;
+}
+
+.claim-card__header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 30px;
+}
+
+.claim-card__icon-wrap {
+    width: 70px;
+    height: 70px;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.claim-card__icon {
+    font-size: 30px;
+    color: var(--color-primary);
+}
+
+.claim-card__title {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--color-text-main);
+    font-weight: 800;
+}
+
+.claim-card__desc {
+    color: var(--color-text-muted);
+    margin-top: 8px;
+}
+
+.claim-form__group {
+    margin-bottom: 30px;
+    animation: fadeInSlideUp 0.5s ease backwards;
+}
+
+.claim-form__group:nth-child(2) { animation-delay: 0.1s; }
+.claim-form__group:nth-child(3) { animation-delay: 0.2s; }
+
+.claim-form__label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-text-main);
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.claim-form__input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #edf2f7;
+    border-radius: var(--radius-md);
+    background: #fdfdfd;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--color-text-main);
+}
+
+.claim-form__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: #fff;
+    box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.12);
+    transform: translateY(-2px);
+}
+
+.claim-form__textarea {
+    min-height: 180px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* Info Box */
+.claim-form__info {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(56, 189, 248, 0.03));
+    border-left: 5px solid var(--color-primary);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin: 40px 0;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    animation: fadeInSlideUp 0.6s ease backwards 0.3s;
+}
+
+.claim-form__info i {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(56, 189, 248, 0.3));
+}
+
+.claim-form__info p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-main);
+}
+
+.claim-form__info strong {
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+/* Page Header (.page-header) */
+.page-header {
+    padding: 180px 0 80px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-header--flota {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop');
+}
+
+.page-header--destinos {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://imgmedia.larepublica.pe/1000x590/larepublica/original/2026/01/13/6966970b047c6558b6050074.webp');
+}
+
+.page-header--corporativo {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop');
+}
+
+.page-header--reclamaciones {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop');
+}
+
+.page-header__title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.page-header__desc {
+    color: #fff;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.claim-form__submit {
+    width: 100%;
+    justify-content: center;
+    padding: 18px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    transition: all 0.3s ease;
+}
+
+.claim-form__submit:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .claim-card {
+        padding: 40px 25px;
+    }
+    
+    .claim-form__info {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
