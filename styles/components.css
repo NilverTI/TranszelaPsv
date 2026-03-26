@@ -1410,6 +1410,11 @@
     .payment-overlay__text {
         font-size: 12px;
         line-height: 1.2;
+        white-space: nowrap; /* Fuerza una sola linea si es posible */
+    }
+
+    .payment-overlay__text br {
+        display: none; /* Elimina los saltos de linea forzados en móvil */
     }
 
     .payment-overlay__img {
@@ -1511,4 +1516,26 @@
         align-items: center;
     }
 
+    /* Ajuste para visualizar carrusel completo sin recortes masivos */
+    .hero {
+        height: 60vw; /* Ajusta altura basado en el ancho (aspect ratio dinámico) */
+        min-height: 250px;
+    }
+    
+    .hero__slide {
+        background-size: 100% 100%; /* Fuerza mostrar toda la imagen de borde a borde */
+        background-position: center;
+    }
+    
+    .hero__badge-title {
+        font-size: 18px; /* Reducción drástica para la imagen deszoomeada */
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
+    
+    .hero__badge-sub {
+        font-size: 9px;
+        padding: 6px 10px;
+        letter-spacing: 1px;
+    }
 }
