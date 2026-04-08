@@ -32,7 +32,7 @@ export const initChatbot = () => {
             }
 
             // Exactly the number requested by the user
-            const phone = '51933915043';
+            const phone = '51950363088';
             
             // Format nice message for customer service
             const message = encodeURIComponent(`Hola Transzela, soy un cliente desde la web y necesito ayuda con lo siguiente:\n\n"${text}"`);

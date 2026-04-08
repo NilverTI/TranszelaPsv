@@ -15,7 +15,7 @@ export function renderFooter(isNested = false) {
                     </div>
                     <h4 class="footer__title">Ayuda o contacto</h4>
                     <div class="footer__contact-wrap">
-                        <a href="#" class="footer__contact-btn"><i class="fa-brands fa-whatsapp footer__whatsapp-icon"></i> 999 999 996</a>
+                        <a href="#" class="footer__contact-btn"><i class="fa-brands fa-whatsapp footer__whatsapp-icon"></i>950 3630 88</a>
                         <div class="footer__contact-btn footer__contact-btn--address">
                             <i class="fa-solid fa-location-dot" style="margin-top: 3px;"></i> 
                             <span class="footer__address-text">Av. Javier Prado 1109,<br>Lima</span>
@@ -80,7 +80,7 @@ export function renderFooter(isNested = false) {
         <div class="chatbot-container" id="chatbot-container">
             <!-- Botón Flotante -->
             <div class="chatbot" id="chatbot-btn">
-                <div class="chatbot__bubble">Hola, soy tu MAPACHO<small>Estoy aquí para ayudarte</small></div>
+                <div class="chatbot__bubble">Hola, soy tu MAPACHON<small>Estoy aquí para ayudarte</small></div>
                 <div class="chatbot__icon">
                     <img src="https://img.freepik.com/premium-vector/cute-robot-waving-hand-cartoon-illustration_138676-2744.jpg" alt="Robot" class="chatbot__img">
                 </div>
@@ -92,7 +92,7 @@ export function renderFooter(isNested = false) {
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <img src="https://img.freepik.com/premium-vector/cute-robot-waving-hand-cartoon-illustration_138676-2744.jpg" alt="Robot Mapacho" style="width:35px; border-radius:50%; border:2px solid var(--color-primary);">
                         <div>
-                            <strong style="font-size: 14px; font-weight: 800;">MAPACHO Asistente</strong>
+                            <strong style="font-size: 14px; font-weight: 800;">MAPACHON Asistente</strong>
                             <small style="display:block; font-size:11px; color:#aaa;">En línea 🟢</small>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ export function renderFooter(isNested = false) {
                 </div>
                 <div class="chatbot-widget__body">
                     <p class="chatbot-widget__msg">
-                        ¡Hola! 👋 Soy Mapacho. ¿En qué te puedo ayudar el día de hoy?
+                        ¡Hola! 👋 Soy Mapachon. ¿En qué te puedo ayudar el día de hoy?
                     </p>
                     <textarea id="chatbot-input" class="chatbot-widget__input" placeholder="Escribe tu consulta o duda aquí..."></textarea>
                     <button id="chatbot-send" class="btn btn--primary u-w-full" style="padding: 12px; font-size: 13px; margin-top: 15px;">

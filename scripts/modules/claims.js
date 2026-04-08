@@ -65,7 +65,7 @@ export const initClaims = () => {
                             `---------------------------------------\n` +
                             `_Favor de adjuntar evidencias (fotos/videos)_`;
 
-        const whatsappNumber = '51933915043';
+        const whatsappNumber = '51950363088';
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messageText)}`;
 
         // Feedback to user
