@@ -3,6 +3,8 @@ import { renderFooter } from '../components/footer.js';
 import { initCarousel } from './modules/animations.js';
 import { initLightbox } from './modules/lightbox.js';
 import { initClaims } from './modules/claims.js';
+import { initCorporateForm } from './modules/corporate.js';
+import { initScheduleModal } from './modules/schedules.js';
 import { renderDestinations } from './data/destinations.js';
 import { renderFleet } from './data/fleet.js';
 import { initSearch } from './modules/search.js';
@@ -54,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render dynamic data
     renderDestinations();
     renderFleet();
+    initScheduleModal();
 
     const lightbox = document.getElementById('fleet-lightbox');
     if (lightbox) {
@@ -63,5 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const claimForm = document.getElementById('claim-form');
     if (claimForm) {
         initClaims();
+    }
+
+    const corporateForm = document.getElementById('corporate-form');
+    if (corporateForm) {
+        initCorporateForm();
     }
 });

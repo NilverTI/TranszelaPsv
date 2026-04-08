@@ -1,0 +1,324 @@
+const SCHEDULE_OVERRIDES = {
+    Lima: {
+        origin: 'Huancayo',
+        durationMin: 430,
+        terminal: 'Terminal Central Huancayo',
+        departures: ['05:40', '09:15', '15:20', '22:10'],
+        services: ['Servicio Ejecutivo', 'Servicio Plus', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 46
+    },
+    Huancayo: {
+        origin: 'Lima',
+        durationMin: 430,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:00', '09:30', '14:45', '22:20'],
+        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 48
+    },
+    Jauja: {
+        origin: 'Lima',
+        durationMin: 395,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:20', '10:10', '15:00', '22:40'],
+        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 44
+    },
+    Huaraz: {
+        origin: 'Lima',
+        durationMin: 485,
+        terminal: 'Terminal Plaza Norte',
+        departures: ['07:00', '11:15', '17:10', '22:50'],
+        services: ['Servicio Plus', 'Servicio VIP', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 58
+    },
+    Huacho: {
+        origin: 'Lima',
+        durationMin: 150,
+        terminal: 'Terminal Norte',
+        departures: ['05:50', '08:30', '13:20', '18:45'],
+        services: ['Servicio Local', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Tarde'],
+        baseFare: 24
+    },
+    Chancay: {
+        origin: 'Lima',
+        durationMin: 95,
+        terminal: 'Terminal Norte',
+        departures: ['05:30', '08:10', '12:40', '18:00'],
+        services: ['Servicio Local', 'Servicio Local', 'Servicio Ejecutivo', 'Servicio Tarde'],
+        baseFare: 18
+    },
+    Huaycan: {
+        origin: 'Lima',
+        durationMin: 70,
+        terminal: 'Terminal Este',
+        departures: ['05:20', '07:50', '13:10', '19:15'],
+        services: ['Servicio Urbano', 'Servicio Express', 'Servicio Ejecutivo', 'Servicio Tarde'],
+        baseFare: 15
+    },
+    'La Oroya': {
+        origin: 'Lima',
+        durationMin: 220,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:10', '09:45', '14:30', '21:00'],
+        services: ['Servicio Plus', 'Servicio Directo', 'Servicio Ejecutivo', 'Servicio Nocturno'],
+        baseFare: 31
+    },
+    Tarma: {
+        origin: 'Lima',
+        durationMin: 300,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:40', '10:20', '15:10', '22:00'],
+        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 36
+    },
+    'Cerro de Pasco': {
+        origin: 'Lima',
+        durationMin: 430,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:30', '10:40', '16:10', '22:30'],
+        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 52
+    },
+    Huanuco: {
+        origin: 'Lima',
+        durationMin: 500,
+        terminal: 'Terminal Yerbateros',
+        departures: ['07:10', '11:40', '17:20', '23:00'],
+        services: ['Servicio Plus', 'Servicio VIP', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 62
+    },
+    'La Merced': {
+        origin: 'Lima',
+        durationMin: 450,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:50', '10:50', '16:00', '22:15'],
+        services: ['Servicio Ejecutivo', 'Servicio Plus', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 56
+    },
+    'San Ramon': {
+        origin: 'Lima',
+        durationMin: 470,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:45', '10:30', '15:40', '22:05'],
+        services: ['Servicio Ejecutivo', 'Servicio Plus', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 58
+    }
+};
+
+const DEFAULT_SERVICE_LABELS = [
+    'Servicio Plus',
+    'Servicio Ejecutivo',
+    'Servicio Directo',
+    'Servicio Nocturno'
+];
+
+const ensureModal = () => {
+    let modal = document.getElementById('schedule-modal');
+    if (modal) return modal;
+
+    document.body.insertAdjacentHTML('beforeend', `
+        <div class="schedule-modal" id="schedule-modal" aria-hidden="true">
+            <div class="schedule-modal__backdrop" data-schedule-close></div>
+            <div class="schedule-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="schedule-modal-title">
+                <button class="schedule-modal__close" type="button" aria-label="Cerrar modal" data-schedule-close>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="schedule-modal__hero">
+                    <span class="schedule-modal__badge">
+                        <i class="fa-solid fa-clock"></i>
+                        Horarios referenciales
+                    </span>
+                    <h3 class="schedule-modal__title" id="schedule-modal-title">Horarios disponibles</h3>
+                    <p class="schedule-modal__subtitle">
+                        Consulta una muestra visual de salidas referenciales para esta ruta.
+                    </p>
+                </div>
+                <div class="schedule-modal__body">
+                    <div class="schedule-modal__route"></div>
+                    <div class="schedule-modal__list"></div>
+                    <div class="schedule-modal__note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Horarios referenciales. Consulta disponibilidad actual al momento de reservar.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `);
+
+    modal = document.getElementById('schedule-modal');
+    const closeTargets = modal.querySelectorAll('[data-schedule-close]');
+
+    closeTargets.forEach((element) => {
+        element.addEventListener('click', () => closeModal(modal));
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('schedule-modal--active')) {
+            closeModal(modal);
+        }
+    });
+
+    return modal;
+};
+
+const closeModal = (modal) => {
+    modal.classList.remove('schedule-modal--active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('body--modal-open');
+};
+
+const openModal = (modal) => {
+    modal.classList.add('schedule-modal--active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('body--modal-open');
+};
+
+const toMinutes = (timeText) => {
+    const [hours, minutes] = timeText.split(':').map(Number);
+    return (hours * 60) + minutes;
+};
+
+const toTimeString = (totalMinutes) => {
+    const normalized = ((totalMinutes % 1440) + 1440) % 1440;
+    const hours = Math.floor(normalized / 60).toString().padStart(2, '0');
+    const minutes = (normalized % 60).toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
+};
+
+const toDurationString = (durationMin) => {
+    const hours = Math.floor(durationMin / 60);
+    const minutes = durationMin % 60;
+    return `${hours}h ${minutes.toString().padStart(2, '0')}min`;
+};
+
+const getSeed = (text) => Array.from(text).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+
+const buildFallbackConfig = (destination, origin) => {
+    const seed = getSeed(destination);
+    const durationOptions = [170, 220, 280, 340, 390, 430, 480];
+    const fareOptions = [22, 28, 34, 39, 45, 52, 60];
+    const departureSets = [
+        ['05:50', '09:10', '14:20', '21:00'],
+        ['06:15', '10:00', '15:10', '22:00'],
+        ['06:40', '10:30', '16:00', '22:40']
+    ];
+
+    return {
+        origin,
+        durationMin: durationOptions[seed % durationOptions.length],
+        terminal: origin === 'Lima' ? 'Terminal Yerbateros' : `Terminal ${origin}`,
+        departures: departureSets[seed % departureSets.length],
+        services: DEFAULT_SERVICE_LABELS,
+        baseFare: fareOptions[seed % fareOptions.length]
+    };
+};
+
+const getScheduleConfig = (destination, origin) => {
+    const override = SCHEDULE_OVERRIDES[destination];
+    if (override) {
+        return {
+            ...override,
+            origin: origin || override.origin
+        };
+    }
+
+    return buildFallbackConfig(destination, origin || 'Lima');
+};
+
+const buildScheduleRows = (destination, origin) => {
+    const config = getScheduleConfig(destination, origin);
+    const durationText = toDurationString(config.durationMin);
+
+    return {
+        destination,
+        origin: config.origin,
+        terminal: config.terminal,
+        rows: config.departures.map((departure, index) => {
+            const seed = getSeed(`${destination}-${departure}-${index}`);
+            const arrival = toTimeString(toMinutes(departure) + config.durationMin);
+            const seats = 8 + (seed % 19);
+            const platform = (seed % 6) + 1;
+
+            return {
+                departure,
+                arrival,
+                duration: durationText,
+                service: config.services[index] || DEFAULT_SERVICE_LABELS[index] || 'Servicio Programado',
+                seats: `${seats} asientos`,
+                platform: `Puerta ${platform}`
+            };
+        })
+    };
+};
+
+const renderModalContent = (modal, destination, origin) => {
+    const data = buildScheduleRows(destination, origin);
+    const title = modal.querySelector('.schedule-modal__title');
+    const route = modal.querySelector('.schedule-modal__route');
+    const list = modal.querySelector('.schedule-modal__list');
+
+    title.textContent = `Horarios para ${data.destination}`;
+    route.innerHTML = `
+        <div class="schedule-route__main">
+            <div>
+                <span class="schedule-route__label">Ruta principal</span>
+                <strong class="schedule-route__value">${data.origin} -> ${data.destination}</strong>
+            </div>
+            <div>
+                <span class="schedule-route__label">Embarque</span>
+                <strong class="schedule-route__value">${data.terminal}</strong>
+            </div>
+        </div>
+        <div class="schedule-route__meta">
+            <span><i class="fa-solid fa-calendar-day"></i> Salidas diarias referenciales</span>
+            <span><i class="fa-solid fa-user-group"></i> Horario sujeto a coordinacion</span>
+        </div>
+    `;
+
+    list.innerHTML = data.rows.map((row) => `
+        <article class="schedule-card">
+            <div class="schedule-card__top">
+                <span class="schedule-card__service">${row.service}</span>
+            </div>
+            <div class="schedule-card__times">
+                <div>
+                    <span class="schedule-card__label">Salida</span>
+                    <strong class="schedule-card__time">${row.departure}</strong>
+                </div>
+                <div class="schedule-card__arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div>
+                    <span class="schedule-card__label">Llegada</span>
+                    <strong class="schedule-card__time">${row.arrival}</strong>
+                </div>
+            </div>
+            <div class="schedule-card__bottom">
+                <span><i class="fa-regular fa-clock"></i> ${row.duration}</span>
+                <span><i class="fa-solid fa-door-open"></i> ${row.platform}</span>
+                <span><i class="fa-solid fa-chair"></i> ${row.seats}</span>
+            </div>
+        </article>
+    `).join('');
+};
+
+export const initScheduleModal = () => {
+    const triggers = document.querySelectorAll('[data-schedule-destination]');
+    if (!triggers.length) return;
+
+    const modal = ensureModal();
+
+    triggers.forEach((trigger) => {
+        if (trigger.dataset.scheduleBound === 'true') return;
+
+        trigger.dataset.scheduleBound = 'true';
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            const destination = trigger.dataset.scheduleDestination;
+            const origin = trigger.dataset.scheduleOrigin || 'Lima';
+
+            renderModalContent(modal, destination, origin);
+            openModal(modal);
+        });
+    });
+};
