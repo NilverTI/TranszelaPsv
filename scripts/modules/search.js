@@ -1,4 +1,5 @@
 import { destinations } from '../data/destinations.js';
+import { showSchedulesModal } from './schedules.js';
 
 export const initSearch = () => {
     // Determine context root path (for future use or fetch overrides if needed)
@@ -36,9 +37,43 @@ export const initSearch = () => {
             dropdown.style.display = 'block';
         };
 
-        const setupAutocomplete = (input, dropdown) => {
-            input.addEventListener('input', () => renderDropdown(input, dropdown));
-            input.addEventListener('focus', () => renderDropdown(input, dropdown));
+        const setupAutocomplete = (input, dropdown, otherInput) => {
+            input.addEventListener('input', () => {
+                const val = input.value.toLowerCase().trim();
+                const otherVal = otherInput.value.toLowerCase().trim();
+                
+                const filtered = allLocations.filter(loc => {
+                    const locLower = loc.toLowerCase();
+                    if (locLower === otherVal) return false;
+                    return val === '' || locLower.includes(val);
+                });
+                
+                if (filtered.length === 0) {
+                    dropdown.style.display = 'none';
+                    return;
+                }
+
+                dropdown.innerHTML = filtered.map(loc => `<li class="search-dropdown__item"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: var(--color-primary, #D7262E);"></i> ${loc}</li>`).join('');
+                dropdown.style.display = 'block';
+            });
+            input.addEventListener('focus', () => {
+                const val = input.value.toLowerCase().trim();
+                const otherVal = otherInput.value.toLowerCase().trim();
+                
+                const filtered = allLocations.filter(loc => {
+                    const locLower = loc.toLowerCase();
+                    if (locLower === otherVal) return false;
+                    return val === '' || locLower.includes(val);
+                });
+                
+                if (filtered.length === 0) {
+                    dropdown.style.display = 'none';
+                    return;
+                }
+
+                dropdown.innerHTML = filtered.map(loc => `<li class="search-dropdown__item"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: var(--color-primary, #D7262E);"></i> ${loc}</li>`).join('');
+                dropdown.style.display = 'block';
+            });
             
             // Hide when clicking outside
             document.addEventListener('click', (e) => {
@@ -57,8 +92,8 @@ export const initSearch = () => {
             });
         };
 
-        setupAutocomplete(originInput, originDropdown);
-        setupAutocomplete(destInput, destDropdown);
+        setupAutocomplete(originInput, originDropdown, destInput);
+        setupAutocomplete(destInput, destDropdown, originInput);
 
         // Swap logic
         if (btnSwap) {
@@ -129,13 +164,25 @@ export const initSearch = () => {
                     alert('⚠️ Por favor, ingresa tu lugar de Origen y Destino.');
                     return;
                 }
+                if (originInput.value.toLowerCase().trim() === destInput.value.toLowerCase().trim()) {
+                    alert('⚠️ El lugar de Origen y Destino no pueden ser iguales.');
+                    return;
+                }
                 let dateMsg = selectedDateType;
+                let formattedDateMsg = '';
                 if (selectedDateType === 'elegir') {
                     dateMsg = dateInput.value ? dateInput.value : '⚠️ Fecha no seleccionada';
+                    formattedDateMsg = dateInput.value;
+                } else if (selectedDateType === 'hoy') {
+                    const d = new Date();
+                    formattedDateMsg = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+                } else if (selectedDateType === 'manana') {
+                    const d = new Date();
+                    d.setDate(d.getDate() + 1);
+                    formattedDateMsg = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
                 }
                 
-                const searchTxt = `🔍 Buscando Viaje:\n\n📍 Origen: ${originInput.value}\n📍 Destino: ${destInput.value}\n📅 Fecha: ${dateMsg}\n\nConectando con el sistema de pasajes...`;
-                alert(searchTxt);
+                showSchedulesModal(destInput.value, originInput.value, formattedDateMsg);
             });
         }
     }, 100); // 100ms delay ensures header DOM is injected

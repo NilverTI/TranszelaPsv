@@ -20,7 +20,7 @@ export function renderFooter(isNested = false) {
                         </a>
                         <a href="https://www.peruserver.pe/" target="_blank" class="footer__contact-btn footer__contact-btn--address" style="text-decoration: none;">
                             <i class="fa-solid fa-location-dot" style="margin-top: 3px;"></i> 
-                            <span class="footer__address-text">PERUSERVER</span>
+                            <span class="footer__address-text">PeruServer.pe</span>
                         </a>
                     </div>
                 </div>
