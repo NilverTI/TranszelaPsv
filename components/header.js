@@ -18,7 +18,7 @@ export function renderHeader(isNested = false) {
                     <nav class="header__nav" id="header-nav">
                         <a href="${rootPath}pages/corporativo.html" class="header__nav-link"><i class="fa-solid fa-headset"></i> Contacto</a>
                         <a href="#" class="header__nav-link"><i class="fa-solid fa-earth-americas"></i> Perú</a>
-                        <a href="#" class="header__nav-link"><i class="fa-solid fa-user"></i> Autogestión</a>
+                        <a href="${rootPath}pages/postula.html" class="header__nav-link"><i class="fa-solid fa-briefcase"></i> Postula</a>
                     </nav>
                     <!-- Mobile Hamburger Button -->
                     <button class="header__hamburger" id="hamburger-btn" aria-label="Abrir menú">

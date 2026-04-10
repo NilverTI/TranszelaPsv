@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSZELA - Trabaja con nosotros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.ico">
+    <style>
+        .postula-section {
+            padding: 4rem 0;
+            background-color: var(--color-bg);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .postula-container {
+            max-width: 850px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Banner Style */
+        .postula-banner {
+            background-color: var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 3rem;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .postula-banner::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%), url('/assets/images/destinos.webp') center/cover no-repeat;
+            opacity: 0.2;
+            mix-blend-mode: overlay;
+        }
+
+        .postula-banner__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .postula-banner__badge {
+            background: #fff;
+            color: var(--color-primary);
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .postula-banner__title {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-black);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .postula-banner__subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Form Header */
+        .postula-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .postula-header h2 {
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .postula-header p {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Form Styling */
+        .postula-form-card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .postula-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .postula-grid {
+                grid-template-columns: 1fr;
+            }
+            .postula-banner {
+                padding: 2rem;
+            }
+            .postula-form-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        .postula-group {
+            position: relative;
+        }
+
+        .postula-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #A0AEC0;
+            font-size: 1.1rem;
+            pointer-events: none;
+            transition: color var(--transition-normal);
+        }
+
+        .postula-input {
+            width: 100%;
+            background-color: var(--color-bg);
+            border: 2px solid transparent;
+            border-radius: var(--radius-md);
+            padding: 1rem 1rem 1rem 3.5rem;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--color-text-main);
+            transition: all var(--transition-normal);
+        }
+
+        .postula-input::placeholder {
+            color: #A0AEC0;
+        }
+
+        .postula-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background-color: var(--color-surface);
+            box-shadow: 0 0 0 4px rgba(215, 38, 46, 0.1);
+        }
+
+        .postula-input:focus + .postula-icon,
+        .postula-input:not(:placeholder-shown) + .postula-icon {
+            color: var(--color-primary);
+        }
+
+        .postula-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A0AEC0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+            padding-right: 3rem;
+            cursor: pointer;
+        }
+
+        /* File Upload */
+        .postula-file-upload {
+            position: relative;
+            background-color: var(--color-bg);
+            border: 2px dashed #CBD5E1;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            transition: all var(--transition-normal);
+            margin-bottom: 2.5rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .postula-file-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .postula-file-upload:hover,
+        .postula-file-upload.is-dragover {
+            border-color: var(--color-primary);
+            background-color: rgba(215, 38, 46, 0.05);
+        }
+
+        .postula-file-icon {
+            font-size: 1.8rem;
+            color: #CBD5E1;
+            transition: color var(--transition-normal);
+        }
+
+        .postula-file-upload:hover .postula-file-icon {
+            color: var(--color-primary);
+        }
+
+        .postula-file-text {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-medium);
+            font-size: 1rem;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            display: block;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-pill);
+            font-weight: var(--font-weight-bold);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-primary);
+            transition: all var(--transition-normal);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(215, 38, 46, 0.35);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mounted Header & Pill -->
+    <div id="app-header"></div>
+
+    <main class="postula-section">
+        <div class="l-container postula-container">
+            
+            <div class="postula-banner">
+                <div class="postula-banner__content">
+                    <span class="postula-banner__badge">Convocatoria laboral</span>
+                    <h1 class="postula-banner__title">¡Buscamos a alguien<br>como tú!</h1>
+                    <p class="postula-banner__subtitle">Únete al equipo líder en transporte interprovincial.</p>
+                </div>
+            </div>
+
+            <div class="postula-header">
+                <h2>Trabaja con nosotros</h2>
+                <p>Comprometido con tu trabajo, te necesitamos</p>
+            </div>
+
+            <div class="postula-form-card">
+                <form id="postula-form">
+                    <div class="postula-grid">
+                        <div class="postula-group">
+                            <input type="text" class="postula-input" id="nombres" placeholder="Nombres" required>
+                            <i class="fa-regular fa-user postula-icon"></i>
+                        </div>
+                        <div class="postula-group">
+                            <input type="text" class="postula-input" id="apellidos" placeholder="Apellidos" required>
+                            <i class="fa-regular fa-user postula-icon"></i>
+                        </div>
+                        <div class="postula-group">
+                            <input type="email" class="postula-input" id="correo" placeholder="Correo" required>
+                            <i class="fa-regular fa-envelope postula-icon"></i>
+                        </div>
+                        <div class="postula-group">
+                            <input type="tel" class="postula-input" id="celular" placeholder="Celular" required>
+                            <i class="fa-solid fa-mobile-screen postula-icon"></i>
+                        </div>
+                        <div class="postula-group">
+                            <select class="postula-input postula-select" id="puesto" required>
+                                <option value="" disabled selected hidden>Puestos de trabajo</option>
+                                <option value="conductor">Conductor de Bus</option>
+                                <option value="terramozo">Terramozo / Terramoza</option>
+                                <option value="atencion">Atención al Cliente</option>
+                                <option value="mecanico">Mecánico de Flota</option>
+                                <option value="administracion">Personal Administrativo</option>
+                            </select>
+                            <i class="fa-solid fa-briefcase postula-icon"></i>
+                        </div>
+                        <div class="postula-group">
+                            <input type="text" class="postula-input" id="steamid" placeholder="Ingresa tu ID de steam" required>
+                            <i class="fa-brands fa-steam postula-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="postula-file-upload" id="file-upload-box">
+                        <input type="file" id="cv-file" accept=".pdf,.doc,.docx" required>
+                        <i class="fa-solid fa-paperclip postula-file-icon"></i>
+                        <span class="postula-file-text" id="file-text">Adjunta tu CV (Puede ser pdf o docx | Máximo 5mb)</span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">ENVIAR</button>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="app-footer"></div>
+
+    <script type="module" src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('cv-file');
+            const fileText = document.getElementById('file-text');
+
+            fileInput.addEventListener('change', function(e) {
+                if (this.files && this.files.length > 0) {
+                    const file = this.files[0];
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('El archivo supera el tamaño máximo de 5MB.');
+                        this.value = '';
+                        fileText.textContent = 'Adjunta tu CV (Puede ser pdf o docx | Máximo 5mb)';
+                        return;
+                    }
+                    fileText.textContent = `Archivo seleccionado: ${file.name}`;
+                    fileText.style.color = 'var(--color-text-main)';
+                } else {
+                    fileText.textContent = 'Adjunta tu CV (Puede ser pdf o docx | Máximo 5mb)';
+                    fileText.style.color = 'var(--color-primary)';
+                }
+            });
+
+            document.getElementById('postula-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('¡Gracias por postular a TRANSZELA! Hemos recibido tus datos y CV exitosamente. Nos pondremos en contacto contigo pronto.');
+                this.reset();
+                fileText.textContent = 'Adjunta tu CV (Puede ser pdf o docx | Máximo 5mb)';
+                fileText.style.color = 'var(--color-primary)';
+            });
+        });
+    </script>
+</body>
+
+</html>
