@@ -16,7 +16,7 @@ export function renderHeader(isNested = false) {
                         </a>
                     </div>
                     <nav class="header__nav" id="header-nav">
-                        <a href="#" class="header__nav-link"><i class="fa-solid fa-headset"></i> Contacto</a>
+                        <a href="${rootPath}pages/corporativo.html" class="header__nav-link"><i class="fa-solid fa-headset"></i> Contacto</a>
                         <a href="#" class="header__nav-link"><i class="fa-solid fa-earth-americas"></i> Perú</a>
                         <a href="#" class="header__nav-link"><i class="fa-solid fa-user"></i> Autogestión</a>
                     </nav>
