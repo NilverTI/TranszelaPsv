@@ -212,12 +212,7 @@ const ensureModal = () => {
                         <i class="fa-solid fa-circle-info"></i>
                         <span>Horarios referenciales. Consulta disponibilidad actual al momento de reservar.</span>
                     </div>
-                    <div class="schedule-modal__actions" style="margin-top: 1.5rem; text-align: center;">
-                        <button id="btn-whatsapp-buscar" class="btn btn--primary" style="background-color: #25D366; border-color: #25D366; color: white; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%;">
-                            <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i>
-                            Enviar por WhatsApp
-                        </button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -360,8 +355,14 @@ const renderModalContent = (modal, destination, origin) => {
         </div>
     `;
 
-    list.innerHTML = data.rows.map((row) => `
-        <article class="schedule-card">
+    let dateLine = modal.dataset.searchDate ? `📅 *Fecha:* ${modal.dataset.searchDate}\n` : '';
+
+    list.innerHTML = data.rows.map((row) => {
+        const text = `Hola *Transzela*, deseo reservar este pasaje:\n\n📍 *Ruta:* ${data.origin} -> ${data.destination}\n${dateLine}⏰ *Salida:* ${row.departure}\n🛋️ *Servicio:* ${row.service}`;
+        const href = `https://wa.me/51950363088?text=${encodeURIComponent(text)}`;
+
+        return `
+        <a href="${href}" target="_blank" class="schedule-card" style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
             <div class="schedule-card__top">
                 <span class="schedule-card__service">${row.service}</span>
             </div>
@@ -371,7 +372,7 @@ const renderModalContent = (modal, destination, origin) => {
                     <strong class="schedule-card__time">${row.departure}</strong>
                 </div>
                 <div class="schedule-card__arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right" style="color: #25D366;"></i>
                 </div>
                 <div>
                     <span class="schedule-card__label">Llegada</span>
@@ -379,23 +380,13 @@ const renderModalContent = (modal, destination, origin) => {
                 </div>
             </div>
             <div class="schedule-card__bottom">
-                <span><i class="fa-regular fa-clock"></i> ${row.duration}</span>
+                <span><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> Comprar</span>
                 <span><i class="fa-solid fa-door-open"></i> ${row.platform}</span>
                 <span><i class="fa-solid fa-chair"></i> ${row.seats}</span>
             </div>
-        </article>
-    `).join('');
-
-    const btnWsp = modal.querySelector('#btn-whatsapp-buscar');
-    if (btnWsp) {
-        let schedulesText = data.rows.map(r => `• Salida: ${r.departure} - Llegada: ${r.arrival} (${r.service})`).join('\n');
-        let dateLine = modal.dataset.searchDate ? `📅 *Fecha:* ${modal.dataset.searchDate}\n` : '';
-        const text = `Hola *Transzela*, deseo consultar disponibilidad para mi viaje:\n\n📍 *Origen:* ${data.origin}\n📍 *Destino:* ${data.destination}\n${dateLine}\n*Horarios vistos:*\n${schedulesText}`;
-        const phone = "51950363088"; // Reemplazar con el número real
-        btnWsp.onclick = () => {
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
-        };
-    }
+        </a>
+        `;
+    }).join('');
 };
 
 export const showSchedulesModal = (destination, origin, dateMsg = '') => {
