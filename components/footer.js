@@ -15,11 +15,13 @@ export function renderFooter(isNested = false) {
                     </div>
                     <h4 class="footer__title">Ayuda o contacto</h4>
                     <div class="footer__contact-wrap">
-                        <a href="#" class="footer__contact-btn"><i class="fa-brands fa-whatsapp footer__whatsapp-icon"></i>950 3630 88</a>
-                        <div class="footer__contact-btn footer__contact-btn--address">
+                        <a href="https://wa.me/51950363088?text=Hola%20vengo%20de%20la%20web" target="_blank" class="footer__contact-btn">
+                            <i class="fa-brands fa-whatsapp footer__whatsapp-icon"></i>950 3630 88
+                        </a>
+                        <a href="https://www.peruserver.pe/" target="_blank" class="footer__contact-btn footer__contact-btn--address" style="text-decoration: none;">
                             <i class="fa-solid fa-location-dot" style="margin-top: 3px;"></i> 
-                            <span class="footer__address-text">Av. Javier Prado 1109,<br>Lima</span>
-                        </div>
+                            <span class="footer__address-text">PERUSERVER</span>
+                        </a>
                     </div>
                 </div>
                 <div>
