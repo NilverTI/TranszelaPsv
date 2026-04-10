@@ -4,7 +4,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 430,
         terminal: 'Terminal Central Huancayo',
         departures: ['05:40', '09:15', '15:20', '22:10'],
-        services: ['Servicio Ejecutivo', 'Servicio Plus', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Premium Inca Suite', 'Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 46
     },
     Huancayo: {
@@ -12,7 +12,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 430,
         terminal: 'Terminal Yerbateros',
         departures: ['06:00', '09:30', '14:45', '22:20'],
-        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Inca Suite', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 48
     },
     Jauja: {
@@ -20,7 +20,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 395,
         terminal: 'Terminal Yerbateros',
         departures: ['06:20', '10:10', '15:00', '22:40'],
-        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Inca Suite', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 44
     },
     Huaraz: {
@@ -28,31 +28,31 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 485,
         terminal: 'Terminal Plaza Norte',
         departures: ['07:00', '11:15', '17:10', '22:50'],
-        services: ['Servicio Plus', 'Servicio VIP', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Inca Suite', 'Servicio VIP', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 58
     },
     Huacho: {
         origin: 'Lima',
         durationMin: 150,
         terminal: 'Terminal Norte',
-        departures: ['05:50', '08:30', '13:20', '18:45'],
-        services: ['Servicio Local', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Tarde'],
+        departures: ['05:50', '10:30', '13:20', '18:45'],
+        services: ['Servicio Local', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Tarde'],
         baseFare: 24
     },
     Chancay: {
         origin: 'Lima',
         durationMin: 95,
         terminal: 'Terminal Norte',
-        departures: ['05:30', '08:10', '12:40', '18:00'],
-        services: ['Servicio Local', 'Servicio Local', 'Servicio Ejecutivo', 'Servicio Tarde'],
+        departures: ['05:30', '09:10', '12:40', '18:00'],
+        services: ['Servicio Local', 'Servicio Local', 'Premium Inca Suite', 'Servicio Tarde'],
         baseFare: 18
     },
     Huaycan: {
         origin: 'Lima',
         durationMin: 70,
         terminal: 'Terminal Este',
-        departures: ['05:20', '07:50', '13:10', '19:15'],
-        services: ['Servicio Urbano', 'Servicio Express', 'Servicio Ejecutivo', 'Servicio Tarde'],
+        departures: ['05:20', '09:50', '13:10', '19:15'],
+        services: ['Servicio Urbano', 'Servicio Express', 'Premium Inca Suite', 'Servicio Tarde'],
         baseFare: 15
     },
     'La Oroya': {
@@ -60,7 +60,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 220,
         terminal: 'Terminal Yerbateros',
         departures: ['06:10', '09:45', '14:30', '21:00'],
-        services: ['Servicio Plus', 'Servicio Directo', 'Servicio Ejecutivo', 'Servicio Nocturno'],
+        services: ['Inca Suite', 'Servicio Directo', 'Premium Inca Suite', 'Servicio Nocturno'],
         baseFare: 31
     },
     Tarma: {
@@ -68,7 +68,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 300,
         terminal: 'Terminal Yerbateros',
         departures: ['06:40', '10:20', '15:10', '22:00'],
-        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Inca Suite', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 36
     },
     'Cerro de Pasco': {
@@ -76,7 +76,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 430,
         terminal: 'Terminal Yerbateros',
         departures: ['06:30', '10:40', '16:10', '22:30'],
-        services: ['Servicio Plus', 'Servicio Ejecutivo', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Inca Suite', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 52
     },
     Huanuco: {
@@ -84,7 +84,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 500,
         terminal: 'Terminal Yerbateros',
         departures: ['07:10', '11:40', '17:20', '23:00'],
-        services: ['Servicio Plus', 'Servicio VIP', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Inca Suite', 'Servicio VIP', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 62
     },
     'La Merced': {
@@ -92,7 +92,7 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 450,
         terminal: 'Terminal Yerbateros',
         departures: ['06:50', '10:50', '16:00', '22:15'],
-        services: ['Servicio Ejecutivo', 'Servicio Plus', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Premium Inca Suite', 'Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 56
     },
     'San Ramon': {
@@ -100,14 +100,86 @@ const SCHEDULE_OVERRIDES = {
         durationMin: 470,
         terminal: 'Terminal Yerbateros',
         departures: ['06:45', '10:30', '15:40', '22:05'],
-        services: ['Servicio Ejecutivo', 'Servicio Plus', 'Servicio Directo', 'Servicio Nocturno'],
+        services: ['Premium Inca Suite', 'Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
         baseFare: 58
+    },
+    Cajacay: {
+        origin: 'Lima',
+        durationMin: 400,
+        terminal: 'Terminal Plaza Norte',
+        departures: ['06:50', '10:20', '15:10', '21:30'],
+        services: ['Servicio Directo', 'Inca Suite', 'Premium Inca Suite', 'Servicio Nocturno'],
+        baseFare: 45
+    },
+    Tunan: {
+        origin: 'Lima',
+        durationMin: 400,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:10', '09:40', '14:50', '21:50'],
+        services: ['Inca Suite', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 42
+    },
+    Concepcion: {
+        origin: 'Lima',
+        durationMin: 410,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:05', '09:35', '14:55', '22:15'],
+        services: ['Premium Inca Suite', 'Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 45
+    },
+    Junin: {
+        origin: 'Lima',
+        durationMin: 350,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:30', '10:00', '15:20', '21:40'],
+        services: ['Inca Suite', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 38
+    },
+    Huayre: {
+        origin: 'Lima',
+        durationMin: 360,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:25', '09:50', '15:30', '21:45'],
+        services: ['Servicio Directo', 'Inca Suite', 'Premium Inca Suite', 'Servicio Nocturno'],
+        baseFare: 39
+    },
+    Shelby: {
+        origin: 'Lima',
+        durationMin: 370,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:40', '10:10', '15:40', '21:55'],
+        services: ['Inca Suite', 'Premium Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 40
+    },
+    Carhuamayo: {
+        origin: 'Lima',
+        durationMin: 380,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:35', '10:20', '15:50', '22:10'],
+        services: ['Premium Inca Suite', 'Inca Suite', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 41
+    },
+    Ambo: {
+        origin: 'Lima',
+        durationMin: 470,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:50', '11:10', '16:50', '22:40'],
+        services: ['Inca Suite', 'Servicio VIP', 'Servicio Directo', 'Servicio Nocturno'],
+        baseFare: 55
+    },
+    Carpapata: {
+        origin: 'Lima',
+        durationMin: 330,
+        terminal: 'Terminal Yerbateros',
+        departures: ['06:45', '10:40', '15:20', '21:30'],
+        services: ['Servicio Directo', 'Inca Suite', 'Premium Inca Suite', 'Servicio Nocturno'],
+        baseFare: 35
     }
 };
 
 const DEFAULT_SERVICE_LABELS = [
-    'Servicio Plus',
-    'Servicio Ejecutivo',
+    'Inca Suite',
+    'Premium Inca Suite',
     'Servicio Directo',
     'Servicio Nocturno'
 ];
@@ -139,6 +211,12 @@ const ensureModal = () => {
                     <div class="schedule-modal__note">
                         <i class="fa-solid fa-circle-info"></i>
                         <span>Horarios referenciales. Consulta disponibilidad actual al momento de reservar.</span>
+                    </div>
+                    <div class="schedule-modal__actions" style="margin-top: 1.5rem; text-align: center;">
+                        <button id="btn-whatsapp-buscar" class="btn btn--primary" style="background-color: #25D366; border-color: #25D366; color: white; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%;">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i>
+                            Enviar por WhatsApp
+                        </button>
                     </div>
                 </div>
             </div>
@@ -198,9 +276,9 @@ const buildFallbackConfig = (destination, origin) => {
     const durationOptions = [170, 220, 280, 340, 390, 430, 480];
     const fareOptions = [22, 28, 34, 39, 45, 52, 60];
     const departureSets = [
-        ['05:50', '09:10', '14:20', '21:00'],
-        ['06:15', '10:00', '15:10', '22:00'],
-        ['06:40', '10:30', '16:00', '22:40']
+        ['09:15', '14:20', '21:00'],
+        ['10:00', '15:10', '22:00'],
+        ['09:40', '16:00', '22:40']
     ];
 
     return {
@@ -233,21 +311,28 @@ const buildScheduleRows = (destination, origin) => {
         destination,
         origin: config.origin,
         terminal: config.terminal,
-        rows: config.departures.map((departure, index) => {
-            const seed = getSeed(`${destination}-${departure}-${index}`);
-            const arrival = toTimeString(toMinutes(departure) + config.durationMin);
-            const seats = 8 + (seed % 19);
-            const platform = (seed % 6) + 1;
+        rows: config.departures
+            .filter(dep => {
+                const hour = parseInt(dep.split(':')[0], 10);
+                return hour >= 5; // Ampliamos el rango para un mejor orden y mas opciones, desde las 5am
+            })
+            .sort((a, b) => a.localeCompare(b)) // Asegura siempre orden cronológico perfecto
+            .slice(0, 4) // Mostramos hasta 4 para llenar bien la cuadricula visual
+            .map((departure, index) => {
+                const seed = getSeed(`${destination}-${departure}-${index}`);
+                const arrival = toTimeString(toMinutes(departure) + config.durationMin);
+                const seats = 8 + (seed % 19);
+                const platform = (seed % 6) + 1;
 
-            return {
-                departure,
-                arrival,
-                duration: durationText,
-                service: config.services[index] || DEFAULT_SERVICE_LABELS[index] || 'Servicio Programado',
-                seats: `${seats} asientos`,
-                platform: `Puerta ${platform}`
-            };
-        })
+                return {
+                    departure,
+                    arrival,
+                    duration: durationText,
+                    service: config.services[index] || DEFAULT_SERVICE_LABELS[index] || 'Servicio Programado',
+                    seats: `${seats} asientos`,
+                    platform: `Puerta ${platform}`
+                };
+            })
     };
 };
 
@@ -300,6 +385,30 @@ const renderModalContent = (modal, destination, origin) => {
             </div>
         </article>
     `).join('');
+
+    const btnWsp = modal.querySelector('#btn-whatsapp-buscar');
+    if (btnWsp) {
+        let schedulesText = data.rows.map(r => `• Salida: ${r.departure} - Llegada: ${r.arrival} (${r.service})`).join('\n');
+        let dateLine = modal.dataset.searchDate ? `📅 *Fecha:* ${modal.dataset.searchDate}\n` : '';
+        const text = `Hola *Transzela*, deseo consultar disponibilidad para mi viaje:\n\n📍 *Origen:* ${data.origin}\n📍 *Destino:* ${data.destination}\n${dateLine}\n*Horarios vistos:*\n${schedulesText}`;
+        const phone = "51950363088"; // Reemplazar con el número real
+        btnWsp.onclick = () => {
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        };
+    }
+};
+
+export const showSchedulesModal = (destination, origin, dateMsg = '') => {
+    const modal = ensureModal();
+    if (dateMsg) {
+        modal.dataset.searchDate = dateMsg;
+        const title = modal.querySelector('.schedule-modal__title');
+        // Will be overwritten by renderModalContent, let's pass dateMsg to renderModalContent or handle it
+    } else {
+        modal.dataset.searchDate = '';
+    }
+    renderModalContent(modal, destination, origin);
+    openModal(modal);
 };
 
 export const initScheduleModal = () => {
