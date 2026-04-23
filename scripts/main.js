@@ -9,8 +9,10 @@ import { renderDestinations } from './data/destinations.js';
 import { renderFleet } from './data/fleet.js';
 import { initSearch } from './modules/search.js';
 import { initChatbot } from './modules/chatbot.js';
+import { initDisclaimer } from './modules/disclaimer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+
     // Determine if we are in a subfolder "pages/"
     const isNested = window.location.pathname.includes('/pages/') || window.location.pathname.includes('\\pages\\');
     
@@ -19,8 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderFooter(isNested);
     initSearch();
     initChatbot();
+    initDisclaimer();
 
     // Hamburger Menu Logic
+
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const headerNav = document.getElementById('header-nav');
     if (hamburgerBtn && headerNav) {
