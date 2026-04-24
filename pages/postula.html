@@ -243,7 +243,7 @@
             width: 100%;
             max-width: 320px;
             margin: 0 auto;
-            background-color: #25D366;
+            background-color: var(--color-primary);
             color: #fff;
             padding: 1rem 2rem;
             border-radius: var(--radius-pill);
@@ -251,16 +251,16 @@
             font-size: 1.05rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            box-shadow: var(--shadow-primary);
             transition: all var(--transition-normal);
             cursor: pointer;
             border: none;
         }
 
         .btn-submit:hover {
-            background-color: #1EBE5D;
+            background-color: var(--color-primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+            box-shadow: 0 12px 30px rgba(215, 38, 46, 0.35);
         }
     </style>
 </head>
@@ -285,27 +285,27 @@
                 <p>Comprometido con tu trabajo, te necesitamos</p>
             </div>
 
-            <div class="postula-form-card">
-                <form id="postula-form">
+            <div id="postula-form-container" class="postula-form-card">
+                <form id="postula-form" action="https://formspree.io/f/xkokkanv" method="POST" enctype="multipart/form-data">
                     <div class="postula-grid">
                         <div class="postula-group">
-                            <input type="text" class="postula-input" id="nombres" placeholder="Nombres" required>
+                            <input type="text" class="postula-input" id="nombres" name="nombres" placeholder="Nombres" required>
                             <i class="fa-regular fa-user postula-icon"></i>
                         </div>
                         <div class="postula-group">
-                            <input type="text" class="postula-input" id="apellidos" placeholder="Apellidos" required>
+                            <input type="text" class="postula-input" id="apellidos" name="apellidos" placeholder="Apellidos" required>
                             <i class="fa-regular fa-user postula-icon"></i>
                         </div>
                         <div class="postula-group">
-                            <input type="email" class="postula-input" id="correo" placeholder="Correo" required>
+                            <input type="email" class="postula-input" id="correo" name="correo" placeholder="Correo" required>
                             <i class="fa-regular fa-envelope postula-icon"></i>
                         </div>
                         <div class="postula-group">
-                            <input type="tel" class="postula-input" id="celular" placeholder="Celular" required>
+                            <input type="tel" class="postula-input" id="celular" name="celular" placeholder="Celular" required>
                             <i class="fa-solid fa-mobile-screen postula-icon"></i>
                         </div>
                         <div class="postula-group">
-                            <select class="postula-input postula-select" id="puesto" required>
+                            <select class="postula-input postula-select" id="puesto" name="puesto" required>
                                 <option value="" disabled selected hidden>Puestos de trabajo</option>
                                 <option value="Conductor de Bus">Conductor de Bus</option>
                                 <option value="Terramozo / Terramoza">Terramozo / Terramoza</option>
@@ -316,25 +316,44 @@
                             <i class="fa-solid fa-briefcase postula-icon"></i>
                         </div>
                         <div class="postula-group">
-                            <input type="text" class="postula-input" id="steamid" placeholder="Ingresa tu ID de Steam"
+                            <input type="text" class="postula-input" id="steamid" name="steamid" placeholder="Ingresa tu ID de Steam"
                                 required>
                             <i class="fa-brands fa-steam postula-icon"></i>
                         </div>
                         <div class="postula-group">
-                            <input type="text" class="postula-input" id="truck-id" placeholder="Link del Trucky">
+                            <input type="text" class="postula-input" id="truck-id" name="truck-id" placeholder="Link del Trucky">
                             <i class="fa-solid fa-truck postula-icon"></i>
                         </div>
                         <div class="postula-group">
-                            <input type="text" class="postula-input" id="discord" placeholder="Usuario de Discord (ej: usuario#1234)">
+                            <input type="text" class="postula-input" id="discord" name="discord" placeholder="Usuario de Discord (ej: usuario#1234)">
                             <i class="fa-brands fa-discord postula-icon"></i>
                         </div>
                     </div>
 
+                    <div class="postula-file-upload" id="drop-zone">
+                        <input type="file" name="documento" id="cv-file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                        <i class="fa-solid fa-paperclip postula-file-icon"></i>
+                        <span class="postula-file-text" id="file-label">Adjunta tu CV (Opcional - PDF o DOCX | Máximo 5MB)</span>
+                    </div>
+
                     <button type="submit" class="btn-submit">
-                        <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i>
-                        ENVIAR POR WHATSAPP
+                        <i class="fa-solid fa-paper-plane" style="font-size:1.1rem;"></i>
+                        ENVIAR POSTULACIÓN
                     </button>
                 </form>
+            </div>
+
+            <div id="postula-success" class="postula-form-card" style="display: none; text-align: center;">
+                <div style="padding: 1rem 0;">
+                    <i class="fa-solid fa-circle-check" style="font-size: 4.5rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                    <h2 style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1rem;">¡Envío Exitoso!</h2>
+                    <p style="font-size: 1.2rem; color: var(--color-text-muted); max-width: 500px; margin: 0 auto;">
+                        Tu postulación ha sido enviada correctamente. Nuestro equipo revisará tu perfil y se pondrá en contacto contigo pronto.
+                    </p>
+                    <button onclick="location.reload()" class="btn-submit" style="margin-top: 2.5rem; max-width: 220px;">
+                        ENVIAR OTRO
+                    </button>
+                </div>
             </div>
 
         </div>
@@ -345,51 +364,79 @@
 
     <script type="module" src="../scripts/main.js"></script>
     <script>
-        // ── Número de WhatsApp del reclutador de TRANSZELA ──────────────────────
-        // Cambia este número por el número real (con código de país, sin + ni espacios)
-        const TRANSZELA_WA_NUMBER = '51999999999';
-        // ────────────────────────────────────────────────────────────────────────
-
         document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('cv-file');
+            const fileLabel = document.getElementById('file-label');
+            const dropZone = document.getElementById('drop-zone');
+
+            // Actualizar etiqueta con el nombre del archivo seleccionado
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    fileLabel.textContent = `Archivo seleccionado: ${e.target.files[0].name}`;
+                    fileLabel.style.color = 'var(--color-primary)';
+                } else {
+                    fileLabel.textContent = 'Adjunta tu CV (Opcional - PDF o DOCX | Máximo 5MB)';
+                    fileLabel.style.color = '';
+                }
+            });
+
+            // Efectos de Drag & Drop
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropZone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    dropZone.classList.add('is-dragover');
+                });
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropZone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    dropZone.classList.remove('is-dragover');
+                });
+            });
 
             document.getElementById('postula-form').addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                const nombres = document.getElementById('nombres').value.trim();
-                const apellidos = document.getElementById('apellidos').value.trim();
-                const correo = document.getElementById('correo').value.trim();
-                const celular = document.getElementById('celular').value.trim();
-                const puesto = document.getElementById('puesto').value.trim();
-                const steamid = document.getElementById('steamid').value.trim();
-                const truckId = document.getElementById('truck-id').value.trim();
-                const discord = document.getElementById('discord').value.trim();
+                const form = this;
+                const formData = new FormData(form);
+                
+                // IMPORTANTE: El plan gratuito de Formspree no soporta archivos.
+                // Eliminamos el archivo de la data para que el resto de los campos de texto lleguen correctamente.
+                formData.delete('documento');
 
-                // Construir mensaje estructurado
-                const lineas = [
-                    '🚌 *POSTULACIÓN LABORAL — TRANSZELA*',
-                    '━━━━━━━━━━━━━━━━━━━━━━━━',
-                    `👤 *Nombre completo:* ${nombres} ${apellidos}`,
-                    `📧 *Correo electrónico:* ${correo}`,
-                    `📱 *Celular:* ${celular}`,
-                    `💼 *Puesto al que postula:* ${puesto}`,
-                    `🎮 *Steam ID:* ${steamid}`,
-                ];
+                const submitBtn = form.querySelector('.btn-submit');
+                const originalBtnContent = submitBtn.innerHTML;
 
-                if (truckId) {
-                    lineas.push(`🚛 *Link Trucky:* ${truckId}`);
-                }
+                // Feedback visual de carga
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ENVIANDO...';
 
-                if (discord) {
-                    lineas.push(`💬 *Discord:* ${discord}`);
-                }
-
-                lineas.push('');
-                lineas.push('_Enviado desde el sitio web oficial de TRANSZELA_');
-
-                const mensaje = lineas.join('\n');
-                const url = `https://wa.me/${TRANSZELA_WA_NUMBER}?text=${encodeURIComponent(mensaje)}`;
-
-                window.open(url, '_blank', 'noopener,noreferrer');
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Ocultar formulario y mostrar éxito
+                        document.getElementById('postula-form-container').style.display = 'none';
+                        document.getElementById('postula-success').style.display = 'block';
+                        form.reset();
+                        
+                        // Scroll suave al inicio del mensaje
+                        window.scrollTo({ top: document.querySelector('.postula-header').offsetTop - 100, behavior: 'smooth' });
+                    } else {
+                        alert('Hubo un error al enviar tu postulación. Por favor, inténtalo de nuevo.');
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnContent;
+                    }
+                }).catch(error => {
+                    alert('Error de conexión. Por favor, verifica tu internet e intenta de nuevo.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                });
             });
 
         });
